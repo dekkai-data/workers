@@ -14,11 +14,9 @@
         "start": "run-p start:**",
         "start:watch": "yarn watch --config-dev-server",
         "lint": "eslint . --ext .js,.ts,.jsx,.tsx",
-        "test": "",
         "prepack": "yarn build",
         "pre-push": "run-p pre-push:**",
-        "pre-push:lint": "yarn lint",
-        "pre-push:test": "yarn test"
+        "pre-push:lint": "yarn lint"
     },
     "devDependencies": {
         "@typescript-eslint/eslint-plugin": "^2.27.0",
