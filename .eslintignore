@@ -1,0 +1,13 @@
+node_modules
+.*
+bamboo
+coverage
+dist
+build
+example
+gulpfile.js
+tests
+*.worker.js
+packages/**/dist/*
+**/rollup.config.js
+rollup.config.generator.js

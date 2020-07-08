@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "sourceMap": true,
+        "moduleResolution": "node",
+        "module": "esnext",
+        "target": "esnext",
+        "lib": [
+          "esnext",
+          "dom",
+          "webworker"
+        ],
+        "declaration": false,
+        "declarationMap": false,
+        "baseUrl": ".",
+        "paths": {},
+        "allowSyntheticDefaultImports": true
+    }
+}
