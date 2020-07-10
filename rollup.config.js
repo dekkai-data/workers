@@ -38,6 +38,7 @@ function generateClientConfig(startDevServer = false) {
     globby.sync([
         path.join('src/', '/**/*.ts'),
         `!${path.join('src/', '/**/*.d.ts')}`,
+        `!${path.join('src/', '/**/types.ts')}`,
     ]).forEach(file => {
         const parsed = path.parse(file);
         input[path.join(parsed.dir.substr('src/'.length), parsed.name)] = file;
@@ -49,7 +50,7 @@ function generateClientConfig(startDevServer = false) {
         output: {
             dir: buildDir,
             format: 'esm',
-            sourcemap: startDevServer,
+            sourcemap: true,
             chunkFileNames: 'dependencies/[name].js',
             paths: id => console.log(id),
         },
