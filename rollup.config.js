@@ -52,7 +52,6 @@ function generateClientConfig(startDevServer = false) {
             format: 'esm',
             sourcemap: true,
             chunkFileNames: 'dependencies/[name].js',
-            paths: id => console.log(id),
         },
         plugins: [
             typescript({
@@ -63,6 +62,9 @@ function generateClientConfig(startDevServer = false) {
         watch: {
             clearScreen: false
         },
+        external: [
+            'worker_threads',
+        ],
     };
 
     if (startDevServer) {
