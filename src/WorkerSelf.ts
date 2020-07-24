@@ -2,32 +2,45 @@ import {MessagePort} from 'worker_threads';
 import {isNodeJS} from './isNodeJS';
 
 // fix `self` type for compilation
-declare var self: WorkerGlobalScope;
+declare const self: WorkerGlobalScope;
 
 // declare `__non_webpack_require__` for WebPack environments
-declare var __non_webpack_require__: any;
-
-let _self: WorkerGlobalScope | MessagePort | null = null;
-if (isNodeJS()) {
-    try {
-        const WorkerThreads =
-            typeof module !== 'undefined' && typeof module.require === 'function' && module.require('worker_threads') ||
-            typeof __non_webpack_require__ === 'function' && __non_webpack_require__('worker_threads') ||
-            typeof require === 'function' && require('worker_threads');
-        _self = WorkerThreads.parentPort;
-    } catch (e) {} // eslint-disable-line
-} else {
-    _self = self;
-}
+declare const __non_webpack_require__: any;
 
 class WorkerSelfWrapper {
-    constructor(self: WorkerGlobalScope | MessagePort) {
-        this._self = self;
+    private _ready: Promise<void> = this.initialize();
+    public get ready(): Promise<void> {
+        return this._ready;
     }
 
     private _self: WorkerGlobalScope | MessagePort;
     public get self(): WorkerGlobalScope | MessagePort {
         return this._self;
+    }
+
+    private async initialize(): Promise<void> {
+        if (isNodeJS()) {
+            try {
+                const dummyJS = './dummy.js';
+                const dynamicImportsProbe = (() => { try { return import(dummyJS).catch(() => {}) } catch (e) { return e } })();
+                const dynamicImportsAvailable = !(dynamicImportsProbe instanceof Error);
+
+                let worker_threads;
+
+                if (dynamicImportsAvailable) {
+                    const libName = 'worker_threads';
+                    worker_threads = await import(libName);
+                } else {
+                    worker_threads =
+                        typeof module !== 'undefined' && typeof module.require === 'function' && module.require('worker_threads') ||
+                        typeof __non_webpack_require__ === 'function' && __non_webpack_require__('worker_threads') ||
+                        typeof require === 'function' && require('worker_threads'); // eslint-disable-line
+                }
+                this._self = worker_threads.parentPort;
+            } catch (e) {} // eslint-disable-line
+        } else {
+            this._self = self;
+        }
     }
 
     public on(event: string, listener: (...args) => void): void {
@@ -63,4 +76,5 @@ class WorkerSelfWrapper {
     }
 }
 
-export const WorkerSelf = new WorkerSelfWrapper(_self);
+const WorkerSelf = new WorkerSelfWrapper();
+export {WorkerSelf};
