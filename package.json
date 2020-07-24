@@ -1,8 +1,9 @@
 {
     "name": "@dekkai/workers",
     "version": "0.0.0",
-    "description": "Worker tools to manage workers in the web and node.js ",
+    "description": "Worker tools to manage workers in the browser, node.js and deno",
     "main": "dist/index.js",
+    "module": "dist/index.js",
     "jsnext:main": "dist/index.js",
     "types": "dist/index.d.ts",
     "repository": "https://github.com/dekkai-csv/workers.git",
@@ -10,7 +11,16 @@
     "license": "MIT",
     "type": "module",
     "files": [
-        "dist"
+        "dist/",
+        "src/"
+    ],
+    "keywords": [
+        "workers",
+        "pool",
+        "node",
+        "browser",
+        "deno",
+        "wrapper"
     ],
     "scripts": {
         "clean": "rimraf dist",
@@ -18,15 +28,12 @@
         "build:scripts": "rollup --config",
         "build:types": "tsc --declaration --declarationMap --emitDeclarationOnly --skipLibCheck --outDir ./dist",
         "watch": "yarn build --watch",
-        "serve": "live-server --no-browser --mount=/scripts:./dist --entry-file=index.html --watch='dist/index.js' --port=8090 --host=0.0.0.0 ./www",
-        "start": "run-p start:**",
-        "start:watch": "yarn watch --config-dev-server",
-        "test": "run-s test:**",
+        "test": "run-s build test:**",
         "test:node": "mocha ./spec/node/**/*.spec.js",
         "test:browser": "karma start --single-run --browsers ChromeHeadless karma.conf.cjs",
         "_test:deno": "deno run --allow-read ./spec/deno/deno.spec.js",
         "lint": "eslint . --ext .js,.ts,.jsx,.tsx",
-        "prepack": "yarn build",
+        "prepack": "run-s clean test lint",
         "pre-push": "run-p pre-push:**",
         "pre-push:lint": "yarn lint",
         "pre-push:test": "yarn test"
