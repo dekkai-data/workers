@@ -8,6 +8,7 @@
     "repository": "https://github.com/dekkai-csv/workers.git",
     "author": "Dario Segura <darionco.dev@gmail.com>",
     "license": "MIT",
+    "type": "module",
     "files": [
         "dist"
     ],
