@@ -11,7 +11,7 @@ export class WorkerWrapper {
         return this._worker;
     }
 
-    public postMessage(message: any, transferable: ArrayBuffer[]): void {
+    public postMessage(message: any, transferable?: ArrayBuffer[]): void {
         this._worker.postMessage(isNodeJS() ? { data: message } : message, transferable);
     }
 
@@ -45,5 +45,6 @@ export class WorkerWrapper {
 
     public terminate(): void {
         this._worker.terminate();
+        this._worker = null;
     }
 }
