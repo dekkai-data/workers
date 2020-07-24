@@ -6,7 +6,7 @@ export interface TaskResult<T> {
 }
 
 export interface WorkerTask {
-    type: string;
+    id: string;
     args: any[];
     transferable?: ArrayBuffer[];
     resolve?: Function;

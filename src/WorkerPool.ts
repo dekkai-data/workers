@@ -33,9 +33,16 @@ export class WorkerPool {
         this.tasks.length = 0;
     }
 
-    public cancelPendingOfType(type: string): void {
+    public cancelPending(task: string | WorkerTask): void {
+        let id;
+        if (typeof task === 'string' || task instanceof String) {
+            id = task;
+        } else {
+            id = task.id;
+        }
+
         this.tasks = this.tasks.filter((task: WorkerTask): boolean => {
-            if (task.type === type) {
+            if (task.id === id) {
                 task.resolve(null);
                 return false;
             }
@@ -51,34 +58,27 @@ export class WorkerPool {
         this.idleWorkers.length = 0;
     }
 
-    public scheduleTask(type: string, args: any[] = [], transferable: ArrayBuffer[] = []): Promise<any> {
-        return new Promise((resolve, reject) => {
-            if (this.idleWorkers.length) {
-                this.executeTask(this.idleWorkers.pop(), { type, args, transferable, resolve, reject });
-            } else {
-                this.tasks.unshift({
-                    type,
-                    args,
-                    transferable,
-                    resolve,
-                    reject,
-                });
-            }
-        });
-    }
-
-    public addWorker(worker: AnyWorker, initTask: WorkerTask | null = null): Promise<any> {
+    public addWorker(worker: AnyWorker, initTask?: WorkerTask): Promise<any> {
         const wrappedWorker = this.wrapWorker(worker);
         this.workers.push(wrappedWorker);
 
         if (initTask) {
             return new Promise((resolve, reject) => {
-                this.executeTask(wrappedWorker, Object.assign({}, initTask, { resolve, reject }));
+                const asyncTask = Object.assign({}, initTask, { resolve, reject });
+                this.executeTask(wrappedWorker, asyncTask);
             });
         }
 
         this.executeTaskFromQueue(wrappedWorker);
         return Promise.resolve();
+    }
+
+    public addWorkers(workers: AnyWorker[], initTask?: WorkerTask): Promise<any[]> {
+        const promises = [];
+        for (let i = 0, n = workers.length; i < n; ++i) {
+            promises.push(this.addWorker(workers[i], initTask));
+        }
+        return Promise.all(promises);
     }
 
     public removeWorker(): PlatformWorker | null {
@@ -89,6 +89,33 @@ export class WorkerPool {
             return worker.worker;
         }
         return null;
+    }
+
+    public makeTask(id: string, args: any[] = [], transferable: ArrayBuffer[] = []): WorkerTask {
+        return {
+            id,
+            args,
+            transferable,
+        };
+    }
+
+    public scheduleTask(task: WorkerTask): Promise<any> {
+        return new Promise((resolve, reject) => {
+            const asyncTask = Object.assign({}, task, { resolve, reject });
+            if (this.idleWorkers.length) {
+                this.executeTask(this.idleWorkers.pop(), asyncTask);
+            } else {
+                this.tasks.unshift(asyncTask);
+            }
+        });
+    }
+
+    public scheduleTasks(tasks: WorkerTask[]): Promise<any[]> {
+        const promises = [];
+        for (let i = 0, n = tasks.length; i < n; ++i) {
+            promises.push(this.scheduleTask(tasks[i]));
+        }
+        return Promise.all(promises);
     }
 
     private wrapWorker(worker: AnyWorker): WorkerWrapper {
@@ -111,12 +138,12 @@ export class WorkerPool {
             const message = e.data;
             worker.removeEventListener('message', handler);
 
-            if (message.type === 'success') {
+            if (message.state === 'success') {
                 task.resolve(message.data);
-            } else if (message.type === 'error') {
+            } else if (message.state === 'error') {
                 task.reject(message.reason);
             } else {
-                throw `ERROR: Unrecognized message type sent from data worker "${message.type}"`;
+                throw `ERROR: Unrecognized message state sent from data worker "${message.state}"`;
             }
 
             this.executeTaskFromQueue(worker);
@@ -124,7 +151,7 @@ export class WorkerPool {
         worker.addEventListener('message', handler);
 
         const message = {
-            type: task.type,
+            task: task.id,
             args: task.args,
         };
         worker.postMessage(message, task.transferable);

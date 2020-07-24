@@ -37,12 +37,12 @@ export class WorkerInterface {
 
     private async handleMessage(e: MessageEvent): Promise<void> {
         const message = e.data;
-        if (message.type) {
+        if (message.task) {
             for (let i = 0, n = this.executorList.length; i < n; ++i) {
                 const taskExecutor = this.executorList[i];
-                if (typeof taskExecutor[message.type] === 'function') {
+                if (typeof taskExecutor[message.task] === 'function') {
                     try {
-                        const taskResult: TaskResult<any> | void = await taskExecutor[message.type](...message.args);
+                        const taskResult: TaskResult<any> | void = await taskExecutor[message.task](...message.args);
                         if (taskResult) {
                             this.sendSuccess(taskResult.result, taskResult.transfer);
                         } else {
@@ -56,19 +56,19 @@ export class WorkerInterface {
             }
         }
 
-        this.sendError(`Unrecognized task: ${message.type}`);
+        this.sendError(`Unrecognized task: ${message.task}`);
     }
 
     private sendError(reason: string): void {
         WorkerSelf.postMessage({
-            type: 'error',
+            state: 'error',
             reason,
         });
     }
 
     private sendSuccess(data: any | null = null, transferable?: ArrayBuffer[]): void {
         WorkerSelf.postMessage({
-            type: 'success',
+            state: 'success',
             data,
         }, transferable);
     }
