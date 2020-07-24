@@ -9,8 +9,8 @@ export interface WorkerTask {
     id: string;
     args: any[];
     transferable?: ArrayBuffer[];
-    resolve?: Function;
-    reject?: Function;
+    resolve?: (r: any) => void;
+    reject?: (e: Error | string) => void;
 }
 
 export type TaskExecutor = any;

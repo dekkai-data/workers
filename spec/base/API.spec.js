@@ -3,9 +3,7 @@ import {WorkerPool} from '../../dist/WorkerPool.js';
 // these tests are supposed to test the basic usage of the complete system.
 function run(env) {
     const {chai} = env;
-    const createWorker = () => {
-        return env.createWorker('api.worker.js');
-    };
+    const createWorker = () => env.createWorker('api.worker.js');
 
     describe('API', function () {
         const pool = new WorkerPool();
@@ -22,7 +20,7 @@ function run(env) {
             const results = await pool.addWorkers(workers, task);
 
             for (let i = 0, n = results.length; i < n; ++i) {
-                chai.expect(results[i]).to.be.true;
+                chai.expect(results[i]).to.equal(true);
             }
         });
 
@@ -34,7 +32,7 @@ function run(env) {
 
             const results = await pool.scheduleTasks(tasks);
             for (let i = 0, n = results.length; i < n; ++i) {
-                chai.expect(results[i]).to.be.true;
+                chai.expect(results[i]).to.equal(true);
             }
         });
 
@@ -62,7 +60,7 @@ function run(env) {
             }
 
             for (let i = 0, n = pool.workerCount; i < n; ++i) {
-                chai.expect(idMap.has(i)).to.be.true;
+                chai.expect(idMap.has(i)).to.equal(true);
                 chai.expect(idMap.get(i)).to.be.above(1);
             }
         });

@@ -11,6 +11,7 @@ export class WorkerWrapper {
         return this._worker;
     }
 
+    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     public postMessage(message: any, transferable?: ArrayBuffer[]): void {
         this._worker.postMessage(isNodeJS() ? { data: message } : message, transferable);
     }

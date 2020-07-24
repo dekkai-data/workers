@@ -19,7 +19,8 @@ function run(env) {
         });
 
         it('should be able to wrap a worker for the platform', function() {
-            chai.expect(wrapped).to.exist;
+            chai.expect(wrapped).to.not.equal(null);
+            chai.expect(wrapped).to.not.equal(undefined);
         });
 
         it('returns the original worker through its `worker` property', function() {

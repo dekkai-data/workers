@@ -27,7 +27,7 @@ function run(env) {
                     done(e);
                 }
             }
-        }
+        };
 
         workerOn(worker, 'message', handler);
         workerPost(worker, { task, name });
@@ -63,7 +63,7 @@ function run(env) {
                     done(e);
                 }
             }
-        }
+        };
 
         workerOn(worker, 'message', handler);
         workerPost(worker, { task, name });
@@ -85,7 +85,7 @@ function run(env) {
                 } catch (e) {
                     done(e);
                 }
-            }
+            };
 
             workerOn(worker, 'message', handler);
             workerPost(worker, { task: 'test-self' });
@@ -111,7 +111,7 @@ function run(env) {
             const handler = () => {
                 workerOff(worker, 'message', handler);
                 done();
-            }
+            };
 
             workerOn(worker, 'message', handler);
             workerPost(worker, { task: 'test-postMessage', message: null });

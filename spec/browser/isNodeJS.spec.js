@@ -1,3 +1,5 @@
+/* global chai */
+
 import {isNodeJS} from '../../dist/isNodeJS.js';
 
 describe('isNodeJS', function() {

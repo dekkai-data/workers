@@ -41,9 +41,9 @@ export class WorkerPool {
             id = task.id;
         }
 
-        this.tasks = this.tasks.filter((task: WorkerTask): boolean => {
-            if (task.id === id) {
-                task.resolve(null);
+        this.tasks = this.tasks.filter((t: WorkerTask): boolean => {
+            if (t.id === id) {
+                t.resolve(null);
                 return false;
             }
             return true;

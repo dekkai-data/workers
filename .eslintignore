@@ -11,3 +11,4 @@ tests
 packages/**/dist/*
 **/rollup.config.js
 rollup.config.generator.js
+spec/deno/env.js

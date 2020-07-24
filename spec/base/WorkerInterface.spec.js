@@ -8,7 +8,7 @@ function run(env) {
     } = env;
 
     function reportSuccess(worker, handler, done) {
-        workerOff(worker,'message', handler);
+        workerOff(worker, 'message', handler);
         done();
     }
 
@@ -35,7 +35,7 @@ function run(env) {
                         reportError(worker, handler, done, new Error(msg.data.reason));
                     }
                 }
-            }
+            };
 
             workerOn(worker, 'message', handler);
             workerPost(worker, { task: 'test-addTaskExecutor01' });
@@ -56,11 +56,9 @@ function run(env) {
 
         it('can remove task executor objects and ignores messages when empty', function(done) {
             let timeoutHandle = null;
-            let removed = false;
             const handler = msg => {
                 if (msg.data) {
                     if (msg.data.state === 'success' && msg.data.data === 'ready') {
-                        removed = true;
                         workerPost(worker, { task: 'ping', args: [] });
                         timeoutHandle = setTimeout(() => {
                             reportSuccess(worker, handler, done);
@@ -74,7 +72,7 @@ function run(env) {
                 } else {
                     reportError(worker, handler, done, new Error('Did not receive a proper response from the task executor.'));
                 }
-            }
+            };
 
             workerOn(worker, 'message', handler);
             workerPost(worker, { task: 'test-removeTaskExecutor01', args: [] });
@@ -93,7 +91,7 @@ function run(env) {
                         reportError(worker, handler, done, new Error(msg.data.reason));
                     }
                 }
-            }
+            };
 
             workerOn(worker, 'message', handler);
             workerPost(worker, { task: 'test-addTaskExecutor-all' });
@@ -127,7 +125,7 @@ function run(env) {
                 } else {
                     reportError(worker, handler, done, new Error('Worker sent unrecognized message'));
                 }
-            }
+            };
 
             workerOn(worker, 'message', handler);
             workerPost(worker, { task: 'repeat', args });
@@ -150,7 +148,7 @@ function run(env) {
                                 reportError(worker, handler, done, e);
                             }
                         } else if (msg.data.data instanceof Float32Array) {
-                            const transfer = msg.data.data
+                            const transfer = msg.data.data;
                             try {
                                 chai.expect(transfer.length).to.equal(lengthBefore);
                                 workerPost(worker, { task: 'confirmTransfer', args: [] });
@@ -163,10 +161,10 @@ function run(env) {
                     } else if (msg.data.state === 'error') {
                         reportError(worker, handler, done, new Error(msg.data.reason));
                     }
-                }  else {
+                } else {
                     reportError(worker, handler, done, new Error('Worker sent unrecognized message'));
                 }
-            }
+            };
 
             workerOn(worker, 'message', handler);
             workerPost(worker, { task: 'receiveTransfer', args: [args] }, [args.buffer]);

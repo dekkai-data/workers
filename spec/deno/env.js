@@ -1,6 +1,9 @@
+/* global chai */
+
 import '../../node_modules/chai/chai.js';
 
 function createWorker(file) {
+    // eslint-disable-next-line
     return new Worker(new URL(`../workers/${file}`, import.meta.url), { type: 'module' });
 }
 

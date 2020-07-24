@@ -5,7 +5,17 @@ import {isNodeJS} from './isNodeJS';
 declare const self: WorkerGlobalScope;
 
 // declare `__non_webpack_require__` for WebPack environments
+// eslint-disable-next-line camelcase
 declare const __non_webpack_require__: any;
+
+function checkDynamicImport(): boolean {
+    try {
+        import(`${null}`).catch(() => false);
+        return true;
+    } catch {
+        return false;
+    }
+}
 
 class WorkerSelfWrapper {
     private _ready: Promise<void> = this.initialize();
@@ -21,22 +31,21 @@ class WorkerSelfWrapper {
     private async initialize(): Promise<void> {
         if (isNodeJS()) {
             try {
-                const dummyJS = './dummy.js';
-                const dynamicImportsProbe = (() => { try { return import(dummyJS).catch(() => {}) } catch (e) { return e } })();
-                const dynamicImportsAvailable = !(dynamicImportsProbe instanceof Error);
+                const dynamicImportsAvailable = checkDynamicImport();
 
-                let worker_threads;
+                let WorkerThreads;
 
                 if (dynamicImportsAvailable) {
                     const libName = 'worker_threads';
-                    worker_threads = await import(libName);
+                    WorkerThreads = await import(libName);
                 } else {
-                    worker_threads =
+                    WorkerThreads =
                         typeof module !== 'undefined' && typeof module.require === 'function' && module.require('worker_threads') ||
+                        // eslint-disable-next-line camelcase
                         typeof __non_webpack_require__ === 'function' && __non_webpack_require__('worker_threads') ||
                         typeof require === 'function' && require('worker_threads'); // eslint-disable-line
                 }
-                this._self = worker_threads.parentPort;
+                this._self = WorkerThreads.parentPort;
             } catch (e) {} // eslint-disable-line
         } else {
             this._self = self;

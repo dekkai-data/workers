@@ -7,9 +7,7 @@ function run(env) {
         performance,
     } = env;
 
-    const createWorker = () => {
-        return env.createWorker('pool.worker.js');
-    }
+    const createWorker = () => env.createWorker('pool.worker.js');
 
     describe('WorkerPool', function() {
         let pool;
@@ -123,15 +121,15 @@ function run(env) {
             const wait = 10;
             const task = pool.makeTask('waitAndPing', [wait]);
 
-            chai.expect(pool.running).to.be.false;
+            chai.expect(pool.running).to.equal(false);
 
             const promise = pool.scheduleTask(task);
 
-            chai.expect(pool.running).to.be.true;
+            chai.expect(pool.running).to.equal(true);
 
             await promise;
 
-            chai.expect(pool.running).to.be.false;
+            chai.expect(pool.running).to.equal(false);
         });
 
         it('cancels all pending tasks', async function() {
@@ -157,7 +155,7 @@ function run(env) {
 
             for (let i = 0; i < workerCount; ++i) {
                 chai.expect(fullfilled[i]).to.equal('pong');
-                chai.expect(cancelled[i]).to.be.null;
+                chai.expect(cancelled[i]).to.equal(null);
             }
         });
 
@@ -187,8 +185,8 @@ function run(env) {
             const cancelled = await toCancel;
             const cancelledByString = await toCancelByString;
 
-            chai.expect(cancelled).to.be.null;
-            chai.expect(cancelledByString).to.be.null;
+            chai.expect(cancelled).to.equal(null);
+            chai.expect(cancelledByString).to.equal(null);
 
             chai.expect(results.length).to.equal(workerCount * 2);
             for (let i = 0, n = results.length; i < n; ++i) {

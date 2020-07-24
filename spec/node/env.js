@@ -1,10 +1,10 @@
-import worker_threads from "worker_threads";
+import WorkerThreads from 'worker_threads';
 import {performance} from 'perf_hooks';
-import path from "path";
+import path from 'path';
 import chai from 'chai';
 
 function createWorker(file) {
-    return new worker_threads.Worker(path.resolve(path.dirname(''), `spec/workers/${file}`));
+    return new WorkerThreads.Worker(path.resolve(path.dirname(''), `spec/workers/${file}`));
 }
 
 function workerOn(worker, evt, handler) {

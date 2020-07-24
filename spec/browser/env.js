@@ -1,3 +1,5 @@
+/* global chai */
+
 function createWorker(file) {
     return new Worker(`/base/spec/workers/${file}`, { type: 'module' });
 }
