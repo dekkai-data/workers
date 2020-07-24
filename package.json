@@ -20,10 +20,14 @@
         "serve": "live-server --no-browser --mount=/scripts:./dist --entry-file=index.html --watch='dist/index.js' --port=8090 --host=0.0.0.0 ./www",
         "start": "run-p start:**",
         "start:watch": "yarn watch --config-dev-server",
+        "test": "run-s test:**",
+        "test:node": "mocha ./spec/node/**/*.spec.js",
+        "test:browser": "karma start --single-run --browsers ChromeHeadless karma.conf.cjs",
         "lint": "eslint . --ext .js,.ts,.jsx,.tsx",
         "prepack": "yarn build",
         "pre-push": "run-p pre-push:**",
-        "pre-push:lint": "yarn lint"
+        "pre-push:lint": "yarn lint",
+        "pre-push:test": "yarn test"
     },
     "devDependencies": {
         "@types/node": "^14.0.24",
