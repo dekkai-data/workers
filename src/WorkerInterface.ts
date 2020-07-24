@@ -31,8 +31,13 @@ export class WorkerInterface {
         }
     }
 
-    private installEventHandlers(): void {
-        WorkerSelf.on('message', this.handleMessage.bind(this));
+    private async installEventHandlers(): Promise<void> {
+        await WorkerSelf.ready;
+        WorkerSelf.on('message', this.boundHandleMessage);
+    }
+
+    private uninstallEventHandlers(): void {
+        WorkerSelf.off('message', this.boundHandleMessage);
     }
 
     private async handleMessage(e: MessageEvent): Promise<void> {
