@@ -3,9 +3,8 @@ import {WorkerSelf} from './WorkerSelf';
 
 export class WorkerInterface {
     private constructor(executor?: TaskExecutor) {
-        this.installEventHandlers();
         if (executor) {
-            this.executorList.push(executor);
+            this.addTaskExecutor(executor);
         }
     }
 
@@ -17,9 +16,13 @@ export class WorkerInterface {
         return this._instance;
     }
     private executorList: TaskExecutor[] = [];
+    private boundHandleMessage: (e: MessageEvent) => Promise<void> = this.handleMessage.bind(this);
 
     public addTaskExecutor(executor: TaskExecutor): void {
         if (this.executorList.indexOf(executor) === -1) {
+            if (!this.executorList.length) {
+                this.installEventHandlers();
+            }
             this.executorList.push(executor);
         }
     }
@@ -28,6 +31,9 @@ export class WorkerInterface {
         const index = this.executorList.indexOf(executor);
         if (index !== -1) {
             this.executorList.splice(index, 1);
+            if (!this.executorList.length) {
+                this.uninstallEventHandlers();
+            }
         }
     }
 
