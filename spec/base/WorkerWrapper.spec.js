@@ -3,6 +3,7 @@ import {WorkerWrapper} from '../../dist/WorkerWrapper.js';
 function run(env) {
     const {
         createWorker,
+        isWorker,
         workerOn,
         workerOff,
         workerPost,
@@ -25,6 +26,13 @@ function run(env) {
 
         it('returns the original worker through its `worker` property', function() {
             chai.expect(wrapped.worker).to.equal(worker);
+        });
+
+        it('can instantiate workers for the platform at runtime', async function() {
+            const wrapped = await WorkerWrapper.createWorker('./base/spec/workers/wrapper.worker.js');
+            chai.expect(wrapped instanceof WorkerWrapper).to.equal(true);
+            chai.expect(isWorker(wrapped.worker)).to.equal(true);
+            wrapped.terminate();
         });
 
         it('wraps the `postMessage` interface', function (done) {

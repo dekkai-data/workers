@@ -7,6 +7,10 @@ function createWorker(file) {
     return new WorkerThreads.Worker(path.resolve(path.dirname(''), `spec/workers/${file}`));
 }
 
+function isWorker(worker) {
+    return worker instanceof WorkerThreads.Worker;
+}
+
 function workerOn(worker, evt, handler) {
     worker.on(evt, handler);
 }
@@ -21,6 +25,7 @@ function workerPost(worker, message, transfer = []) {
 
 export const env = {
     createWorker,
+    isWorker,
     workerOn,
     workerOff,
     workerPost,

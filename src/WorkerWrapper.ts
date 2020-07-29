@@ -1,9 +1,26 @@
 import {NodeWorker, WebWorker, PlatformWorker} from './types';
-import {isNodeJS} from './isNodeJS';
+import {isNodeJS, getModule} from './envNodeJS';
+
+const kWorkerPromise: Promise<any> = isNodeJS() ? getModule('worker_threads').then(mod => mod.Worker) : Promise.resolve(Worker);
+const kPathPromise: Promise<any> = isNodeJS() ? getModule('path') : Promise.resolve(null);
 
 export class WorkerWrapper {
     constructor(worker: PlatformWorker) {
         this._worker = worker;
+    }
+
+    static async createWorker(src: string, options: any): Promise<WorkerWrapper> {
+        const args = [];
+        if (isNodeJS()) {
+            const path = await kPathPromise;
+            args.push(path.resolve(path.dirname(''), src));
+        } else {
+            args.push(src);
+        }
+        args.push(options);
+
+        const worker = new (await kWorkerPromise)(...args);
+        return new WorkerWrapper(worker);
     }
 
     private _worker: PlatformWorker;
