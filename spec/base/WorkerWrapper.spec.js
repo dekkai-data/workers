@@ -29,10 +29,10 @@ function run(env) {
         });
 
         it('can instantiate workers for the platform at runtime', async function() {
-            const wrapped = await WorkerWrapper.createWorker('./base/spec/workers/wrapper.worker.js');
-            chai.expect(wrapped instanceof WorkerWrapper).to.equal(true);
-            chai.expect(isWorker(wrapped.worker)).to.equal(true);
-            wrapped.terminate();
+            const result = await WorkerWrapper.createWorker('./base/spec/workers/wrapper.worker.js');
+            chai.expect(result instanceof WorkerWrapper).to.equal(true);
+            chai.expect(isWorker(result.worker)).to.equal(true);
+            result.terminate();
         });
 
         it('wraps the `postMessage` interface', function (done) {

@@ -9,7 +9,7 @@ export class WorkerWrapper {
         this._worker = worker;
     }
 
-    static async createWorker(src: string, options: any): Promise<WorkerWrapper> {
+    static async createWorker(src: string, options: WorkerOptions): Promise<WorkerWrapper> {
         const args = [];
         if (isNodeJS()) {
             const path = await kPathPromise;

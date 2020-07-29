@@ -24,11 +24,9 @@ declare const __non_webpack_require__: any;
 export async function getModule(mod: string): Promise<any> {
     if (kSupportsDynamicImport) {
         return await import(mod);
-    } else {
-        return typeof module !== 'undefined' && typeof module.require === 'function' && module.require(mod) ||
-                // eslint-disable-next-line camelcase
-                typeof __non_webpack_require__ === 'function' && __non_webpack_require__(mod) ||
-                typeof require === 'function' && require(mod); // eslint-disable-line
     }
-    return null;
+    return typeof module !== 'undefined' && typeof module.require === 'function' && module.require(mod) ||
+            // eslint-disable-next-line camelcase
+            typeof __non_webpack_require__ === 'function' && __non_webpack_require__(mod) ||
+            typeof require === 'function' && require(mod); // eslint-disable-line
 }
