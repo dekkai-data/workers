@@ -11,13 +11,23 @@ export class WorkerWrapper {
 
     static async createWorker(src: string, options: WorkerOptions): Promise<WorkerWrapper> {
         const args = [];
-        if (isNodeJS()) {
+        const argsOptions = Object.assign({}, options);
+        if (isNodeJS() && typeof __dirname !== 'undefined') {
             const path = await kPathPromise;
-            args.push(path.resolve(path.dirname(''), src));
+            args.push(path.resolve(__dirname, src));
+        } else if (typeof import.meta !== 'undefined') {
+            args.push(new URL(src, import.meta.url));
+            // check for deno
+            if (typeof (import.meta as any).main !== 'undefined') {
+                // Error: Not yet implemented: only "module" type workers are supported
+                if (!argsOptions.hasOwnProperty('type') || argsOptions.type !== 'module') {
+                    argsOptions.type = 'module';
+                }
+            }
         } else {
             args.push(src);
         }
-        args.push(options);
+        args.push(argsOptions);
 
         const worker = new (await kWorkerPromise)(...args);
         return new WorkerWrapper(worker);
