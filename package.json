@@ -33,7 +33,7 @@
         "test:node": "mocha ./spec/node/**/*.spec.js",
         "test:browser": "karma start --single-run --browsers ChromeHeadless karma.conf.cjs",
         "_test:deno": "deno run --allow-read ./spec/deno/deno.spec.js",
-        "lint": "eslint . --ext .js,.ts,.jsx,.tsx",
+        "lint": "eslint --ext .js,.ts,.jsx,.tsx \"./{src,spec}/**\"",
         "prepack": "run-s clean test lint",
         "pre-push": "run-p pre-push:**",
         "pre-push:lint": "yarn lint",
