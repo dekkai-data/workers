@@ -1,0 +1,726 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>WorkerPool | @dekkai/workers</title>
+	<meta name="description" content="Documentation for @dekkai/workers">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">@dekkai/workers</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="workerpool.html">WorkerPool</a>
+				</li>
+			</ul>
+			<h1>Class WorkerPool</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">WorkerPool</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="workerpool.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="workerpool.html#idleworkers" class="tsd-kind-icon">idle<wbr>Workers</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="workerpool.html#tasks" class="tsd-kind-icon">tasks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="workerpool.html#workers" class="tsd-kind-icon">workers</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="workerpool.html#_sharedinstance" class="tsd-kind-icon">_shared<wbr>Instance</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Accessors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="workerpool.html#running" class="tsd-kind-icon">running</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="workerpool.html#workercount" class="tsd-kind-icon">worker<wbr>Count</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-static"><a href="workerpool.html#sharedinstance" class="tsd-kind-icon">shared<wbr>Instance</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="workerpool.html#addworker" class="tsd-kind-icon">add<wbr>Worker</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="workerpool.html#addworkers" class="tsd-kind-icon">add<wbr>Workers</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="workerpool.html#cancelallpending" class="tsd-kind-icon">cancel<wbr>All<wbr>Pending</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="workerpool.html#cancelpending" class="tsd-kind-icon">cancel<wbr>Pending</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="workerpool.html#executetask" class="tsd-kind-icon">execute<wbr>Task</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="workerpool.html#executetaskfromqueue" class="tsd-kind-icon">execute<wbr>Task<wbr>From<wbr>Queue</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="workerpool.html#killworkers" class="tsd-kind-icon">kill<wbr>Workers</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="workerpool.html#maketask" class="tsd-kind-icon">make<wbr>Task</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="workerpool.html#removeworker" class="tsd-kind-icon">remove<wbr>Worker</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="workerpool.html#scheduletask" class="tsd-kind-icon">schedule<wbr>Task</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="workerpool.html#scheduletasks" class="tsd-kind-icon">schedule<wbr>Tasks</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="workerpool.html#wrapworker" class="tsd-kind-icon">wrap<wbr>Worker</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="workerpool.html#wrapworkers" class="tsd-kind-icon">wrap<wbr>Workers</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Worker<wbr>Pool<span class="tsd-signature-symbol">(</span>workers<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Worker</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="workerpool.html" class="tsd-signature-type">WorkerPool</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/18f042b/src/WorkerPool.ts#L13">src/WorkerPool.ts:13</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> workers: <span class="tsd-signature-type">Worker</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="workerpool.html" class="tsd-signature-type">WorkerPool</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="idleworkers" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> idle<wbr>Workers</h3>
+					<div class="tsd-signature tsd-kind-icon">idle<wbr>Workers<span class="tsd-signature-symbol">:</span> <a href="workerwrapper.html" class="tsd-signature-type">WorkerWrapper</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/18f042b/src/WorkerPool.ts#L12">src/WorkerPool.ts:12</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="tasks" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> tasks</h3>
+					<div class="tsd-signature tsd-kind-icon">tasks<span class="tsd-signature-symbol">:</span> <a href="../interfaces/workertask.html" class="tsd-signature-type">WorkerTask</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/18f042b/src/WorkerPool.ts#L13">src/WorkerPool.ts:13</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="workers" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> workers</h3>
+					<div class="tsd-signature tsd-kind-icon">workers<span class="tsd-signature-symbol">:</span> <a href="workerwrapper.html" class="tsd-signature-type">WorkerWrapper</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/18f042b/src/WorkerPool.ts#L11">src/WorkerPool.ts:11</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="_sharedinstance" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> _shared<wbr>Instance</h3>
+					<div class="tsd-signature tsd-kind-icon">_shared<wbr>Instance<span class="tsd-signature-symbol">:</span> <a href="workerpool.html" class="tsd-signature-type">WorkerPool</a><span class="tsd-signature-symbol"> = new WorkerPool()</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/18f042b/src/WorkerPool.ts#L6">src/WorkerPool.ts:6</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="running" class="tsd-anchor"></a>
+					<h3>running</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> running<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/18f042b/src/WorkerPool.ts#L25">src/WorkerPool.ts:25</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="workercount" class="tsd-anchor"></a>
+					<h3>worker<wbr>Count</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> workerCount<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/18f042b/src/WorkerPool.ts#L21">src/WorkerPool.ts:21</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-static">
+					<a name="sharedinstance" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> shared<wbr>Instance</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> sharedInstance<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="workerpool.html" class="tsd-signature-type">WorkerPool</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/18f042b/src/WorkerPool.ts#L7">src/WorkerPool.ts:7</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="workerpool.html" class="tsd-signature-type">WorkerPool</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addworker" class="tsd-anchor"></a>
+					<h3>add<wbr>Worker</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Worker<span class="tsd-signature-symbol">(</span>worker<span class="tsd-signature-symbol">: </span><a href="../globals.html#anyworker" class="tsd-signature-type">AnyWorker</a>, initTask<span class="tsd-signature-symbol">?: </span><a href="../interfaces/workertask.html" class="tsd-signature-type">WorkerTask</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/18f042b/src/WorkerPool.ts#L61">src/WorkerPool.ts:61</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>worker: <a href="../globals.html#anyworker" class="tsd-signature-type">AnyWorker</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> initTask: <a href="../interfaces/workertask.html" class="tsd-signature-type">WorkerTask</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addworkers" class="tsd-anchor"></a>
+					<h3>add<wbr>Workers</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Workers<span class="tsd-signature-symbol">(</span>workers<span class="tsd-signature-symbol">: </span><a href="../globals.html#anyworker" class="tsd-signature-type">AnyWorker</a><span class="tsd-signature-symbol">[]</span>, initTask<span class="tsd-signature-symbol">?: </span><a href="../interfaces/workertask.html" class="tsd-signature-type">WorkerTask</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/18f042b/src/WorkerPool.ts#L76">src/WorkerPool.ts:76</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>workers: <a href="../globals.html#anyworker" class="tsd-signature-type">AnyWorker</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> initTask: <a href="../interfaces/workertask.html" class="tsd-signature-type">WorkerTask</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="cancelallpending" class="tsd-anchor"></a>
+					<h3>cancel<wbr>All<wbr>Pending</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">cancel<wbr>All<wbr>Pending<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/18f042b/src/WorkerPool.ts#L29">src/WorkerPool.ts:29</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="cancelpending" class="tsd-anchor"></a>
+					<h3>cancel<wbr>Pending</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">cancel<wbr>Pending<span class="tsd-signature-symbol">(</span>task<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/workertask.html" class="tsd-signature-type">WorkerTask</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/18f042b/src/WorkerPool.ts#L36">src/WorkerPool.ts:36</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>task: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/workertask.html" class="tsd-signature-type">WorkerTask</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="executetask" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> execute<wbr>Task</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">execute<wbr>Task<span class="tsd-signature-symbol">(</span>worker<span class="tsd-signature-symbol">: </span><a href="workerwrapper.html" class="tsd-signature-type">WorkerWrapper</a>, task<span class="tsd-signature-symbol">: </span><a href="../interfaces/workertask.html" class="tsd-signature-type">WorkerTask</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/18f042b/src/WorkerPool.ts#L136">src/WorkerPool.ts:136</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>worker: <a href="workerwrapper.html" class="tsd-signature-type">WorkerWrapper</a></h5>
+								</li>
+								<li>
+									<h5>task: <a href="../interfaces/workertask.html" class="tsd-signature-type">WorkerTask</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="executetaskfromqueue" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> execute<wbr>Task<wbr>From<wbr>Queue</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">execute<wbr>Task<wbr>From<wbr>Queue<span class="tsd-signature-symbol">(</span>worker<span class="tsd-signature-symbol">: </span><a href="workerwrapper.html" class="tsd-signature-type">WorkerWrapper</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/18f042b/src/WorkerPool.ts#L160">src/WorkerPool.ts:160</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>worker: <a href="workerwrapper.html" class="tsd-signature-type">WorkerWrapper</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="killworkers" class="tsd-anchor"></a>
+					<h3>kill<wbr>Workers</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">kill<wbr>Workers<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/18f042b/src/WorkerPool.ts#L53">src/WorkerPool.ts:53</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="maketask" class="tsd-anchor"></a>
+					<h3>make<wbr>Task</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">make<wbr>Task<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, args<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span>, transferable<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ArrayBuffer</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/workertask.html" class="tsd-signature-type">WorkerTask</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/18f042b/src/WorkerPool.ts#L94">src/WorkerPool.ts:94</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>id: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> transferable: <span class="tsd-signature-type">ArrayBuffer</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/workertask.html" class="tsd-signature-type">WorkerTask</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="removeworker" class="tsd-anchor"></a>
+					<h3>remove<wbr>Worker</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Worker<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#platformworker" class="tsd-signature-type">PlatformWorker</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/18f042b/src/WorkerPool.ts#L84">src/WorkerPool.ts:84</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#platformworker" class="tsd-signature-type">PlatformWorker</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="scheduletask" class="tsd-anchor"></a>
+					<h3>schedule<wbr>Task</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">schedule<wbr>Task<span class="tsd-signature-symbol">(</span>task<span class="tsd-signature-symbol">: </span><a href="../interfaces/workertask.html" class="tsd-signature-type">WorkerTask</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/18f042b/src/WorkerPool.ts#L102">src/WorkerPool.ts:102</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>task: <a href="../interfaces/workertask.html" class="tsd-signature-type">WorkerTask</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="scheduletasks" class="tsd-anchor"></a>
+					<h3>schedule<wbr>Tasks</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">schedule<wbr>Tasks<span class="tsd-signature-symbol">(</span>tasks<span class="tsd-signature-symbol">: </span><a href="../interfaces/workertask.html" class="tsd-signature-type">WorkerTask</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/18f042b/src/WorkerPool.ts#L113">src/WorkerPool.ts:113</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>tasks: <a href="../interfaces/workertask.html" class="tsd-signature-type">WorkerTask</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="wrapworker" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> wrap<wbr>Worker</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">wrap<wbr>Worker<span class="tsd-signature-symbol">(</span>worker<span class="tsd-signature-symbol">: </span><a href="../globals.html#anyworker" class="tsd-signature-type">AnyWorker</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="workerwrapper.html" class="tsd-signature-type">WorkerWrapper</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/18f042b/src/WorkerPool.ts#L121">src/WorkerPool.ts:121</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>worker: <a href="../globals.html#anyworker" class="tsd-signature-type">AnyWorker</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="workerwrapper.html" class="tsd-signature-type">WorkerWrapper</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="wrapworkers" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> wrap<wbr>Workers</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">wrap<wbr>Workers<span class="tsd-signature-symbol">(</span>workers<span class="tsd-signature-symbol">: </span><a href="../globals.html#anyworker" class="tsd-signature-type">AnyWorker</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="workerwrapper.html" class="tsd-signature-type">WorkerWrapper</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/18f042b/src/WorkerPool.ts#L128">src/WorkerPool.ts:128</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>workers: <a href="../globals.html#anyworker" class="tsd-signature-type">AnyWorker</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="workerwrapper.html" class="tsd-signature-type">WorkerWrapper</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-class">
+						<a href="workerinterface.html" class="tsd-kind-icon">Worker<wbr>Interface</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
+						<a href="workerpool.html" class="tsd-kind-icon">Worker<wbr>Pool</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="workerpool.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="workerpool.html#idleworkers" class="tsd-kind-icon">idle<wbr>Workers</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="workerpool.html#tasks" class="tsd-kind-icon">tasks</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="workerpool.html#workers" class="tsd-kind-icon">workers</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="workerpool.html#_sharedinstance" class="tsd-kind-icon">_shared<wbr>Instance</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="workerpool.html#running" class="tsd-kind-icon">running</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="workerpool.html#workercount" class="tsd-kind-icon">worker<wbr>Count</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-static">
+								<a href="workerpool.html#sharedinstance" class="tsd-kind-icon">shared<wbr>Instance</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="workerpool.html#addworker" class="tsd-kind-icon">add<wbr>Worker</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="workerpool.html#addworkers" class="tsd-kind-icon">add<wbr>Workers</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="workerpool.html#cancelallpending" class="tsd-kind-icon">cancel<wbr>All<wbr>Pending</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="workerpool.html#cancelpending" class="tsd-kind-icon">cancel<wbr>Pending</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="workerpool.html#executetask" class="tsd-kind-icon">execute<wbr>Task</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="workerpool.html#executetaskfromqueue" class="tsd-kind-icon">execute<wbr>Task<wbr>From<wbr>Queue</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="workerpool.html#killworkers" class="tsd-kind-icon">kill<wbr>Workers</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="workerpool.html#maketask" class="tsd-kind-icon">make<wbr>Task</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="workerpool.html#removeworker" class="tsd-kind-icon">remove<wbr>Worker</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="workerpool.html#scheduletask" class="tsd-kind-icon">schedule<wbr>Task</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="workerpool.html#scheduletasks" class="tsd-kind-icon">schedule<wbr>Tasks</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="workerpool.html#wrapworker" class="tsd-kind-icon">wrap<wbr>Worker</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="workerpool.html#wrapworkers" class="tsd-kind-icon">wrap<wbr>Workers</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-class">
+						<a href="workerselfwrapper.html" class="tsd-kind-icon">Worker<wbr>Self<wbr>Wrapper</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="workerwrapper.html" class="tsd-kind-icon">Worker<wbr>Wrapper</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="../interfaces/taskresult.html" class="tsd-kind-icon">Task<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/workertask.html" class="tsd-kind-icon">Worker<wbr>Task</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#anyworker" class="tsd-kind-icon">Any<wbr>Worker</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#nodeworker" class="tsd-kind-icon">Node<wbr>Worker</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#platformworker" class="tsd-kind-icon">Platform<wbr>Worker</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#taskexecutor" class="tsd-kind-icon">Task<wbr>Executor</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#webworker" class="tsd-kind-icon">Web<wbr>Worker</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#workerself" class="tsd-kind-icon">Worker<wbr>Self</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#__non_webpack_require__" class="tsd-kind-icon">__non_<wbr>webpack_<wbr>require__</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#kisnodejs" class="tsd-kind-icon">k<wbr>IsNodeJS</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#kpathpromise" class="tsd-kind-icon">k<wbr>Path<wbr>Promise</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#ksupportsdynamicimport" class="tsd-kind-icon">k<wbr>Supports<wbr>Dynamic<wbr>Import</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#kworkerpromise" class="tsd-kind-icon">k<wbr>Worker<wbr>Promise</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#self" class="tsd-kind-icon">self</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../globals.html#checkdynamicimport" class="tsd-kind-icon">check<wbr>Dynamic<wbr>Import</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../globals.html#getmodule" class="tsd-kind-icon">get<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../globals.html#isnodejs" class="tsd-kind-icon">is<wbr>NodeJS</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../globals.html#supportsdynamicimport" class="tsd-kind-icon">supports<wbr>Dynamic<wbr>Import</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
