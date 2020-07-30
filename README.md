@@ -12,11 +12,11 @@ Worker tools to manage workers in browsers, node.js and deno.
 
 Provides a minimum common API between all the platforms through wrappers:
 
-- **WorkerWrapper:** Exposes `addEventListenr`/`removeEventListener`, `on`/`off` and utility functions to wrap workers.
+- **WorkerWrapper:** Wraps a worker and exposes `addEventListenr`/`removeEventListener`, `on`/`off` and utility functions.
 - **WorkerSelf:** Wraps the `self` interface to expose the same API on all platforms.
 - **WorkerInterface:** Provides an interface to wrap objects in workers and handle messaging with the main thread.
 - **WorkerPool:** Class to schedule tasks and handling messages with multiple workers.
-- **envNodeJS:** Utility functions to detect node and handle loading modules in CommonJS and ES Modules modes.
+- **envNodeJS:** Utility functions to detect node and handle loading CommonJS (`require`) and ES Modules (`import`).
 
 **TODO: Add link to API documentation** 
 
