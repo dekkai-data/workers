@@ -3,7 +3,7 @@ name: CI
 on: [push, pull_request] # Run on Push and Pull Requests
 
 jobs:
-  build:
+  build-test:
 
     runs-on: ubuntu-latest
 
@@ -18,9 +18,11 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install -g yarn
-    - name: install, clean, build and test
-      run: |
-        yarn
-        yarn clean
-        yarn build
-        yarn test
+    - name: install
+      run: yarn
+    - name: clean
+      run: yarn clean
+    - name: build
+      run: yarn build
+    - name: test
+      run: yarn test
