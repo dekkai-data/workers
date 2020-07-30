@@ -14,7 +14,7 @@ Provides a minimum common API between all the platforms through wrappers:
 - **WorkerSelf:** Wraps the `self` interface to expose the same API on all platforms.
 - **WorkerInterface:** Provides an interface to wrap objects in workers and handle messaging with the main thread.
 - **WorkerPool:** Class to schedule tasks and handling messages with multiple workers.
-- **envNodeJS:** Utility functions to detect node and handle loading modules in CommonJS or ES Modules modes.
+- **envNodeJS:** Utility functions to detect node and handle loading modules in CommonJS and ES Modules modes.
 
 **TODO: Add link to API documentation** 
 
@@ -71,7 +71,7 @@ const worker = new Worker('./simple.worker.js', { type: 'module' });
 const worker = new worker_threads.Worker('./simple.worker.js');
 // in deno
 const worker = new Worker(new URL('./simple.worker.js', import.meta.url), { type: 'module' });
-// or use the convenience function in thw WorkerWrapper class
+// or use the convenience function in the WorkerWrapper class
 const worker = await WorkerWrapper.createWorker('./simple.worker.js', { type: 'module' });
 
 // initialize a worker pool
@@ -102,7 +102,7 @@ until the following bug is resolved:
 https://github.com/denoland/deno/issues/3557
 
 The current status of deno tests is:
-```shell script
+```
   WorkerWrapper
     ✓ should be able to wrap a worker for the platform
     ✓ returns the original worker through its `worker` property
