@@ -27,6 +27,7 @@
         "build": "run-p build:**",
         "build:scripts": "rollup --config",
         "build:types": "tsc --declaration --emitDeclarationOnly --skipLibCheck --outDir ./dist",
+        "docs": "typedoc --out ./docs ./src --exclude 'node_modules/**/*' --mode file",
         "watch": "yarn build --watch",
         "test": "run-s build test:**",
         "test:node": "mocha ./spec/node/**/*.spec.js",
@@ -58,6 +59,7 @@
         "rollup-plugin-sourcemaps": "^0.6.2",
         "rollup-plugin-typescript2": "^0.27.0",
         "tslib": "^2.0.0",
+        "typedoc": "^0.17.8",
         "typescript": "^3.9.7"
     },
     "husky": {
