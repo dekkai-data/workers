@@ -1,6 +1,8 @@
 <div align="center">
 
-![@dekkai/workers](https://raw.githubusercontent.com/dekkai-csv/assets/master/svg/dekkai_workers_banner_light.svg)
+![@dekkai/workers](https://raw.githubusercontent.com/dekkai-csv/assets/master/svg/dekkai_workers_banner_light.svg)  
+![CI](https://github.com/dekkai-csv/workers/workflows/CI/badge.svg)
+![opinion](https://img.shields.io/badge/badges_are-meaningless-blue)
 
 </div>
 
