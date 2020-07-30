@@ -18,7 +18,7 @@ Provides a minimum common API between all the platforms through wrappers:
 - **WorkerPool:** Class to schedule tasks and handling messages with multiple workers.
 - **envNodeJS:** Utility functions to detect node and handle loading CommonJS (`require`) and ES Modules (`import`).
 
-**TODO: Add link to API documentation** 
+Check out the full [API Documentation](https://dekkai-csv.github.io/workers/)
 
 ## Installation
 
@@ -95,7 +95,7 @@ assert(result === 'pong');
 pool.scheduleTask(task).then(result => assert(result === 'pong'));
 ```
 
-**TODO: Add link to API documentation**
+Check out the full [API Documentation](https://dekkai-csv.github.io/workers/)
 
 ## Deno notes
 
