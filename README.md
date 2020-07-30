@@ -8,7 +8,7 @@
 
 Worker tools to manage workers in browsers, node.js and deno.
 
-Provides a minimum common API between all the platforms though wrappers:
+Provides a minimum common API between all the platforms through wrappers:
 
 - **WorkerWrapper:** Exposes `addEventListenr`/`removeEventListener`, `on`/`off` and utility functions to wrap workers.
 - **WorkerSelf:** Wraps the `self` interface to expose the same API on all platforms.
