@@ -21,7 +21,7 @@ function run(env) {
             pool = new WorkerPool(workers);
         });
 
-        it('returns its worker count through the `workingCount` property', function() {
+        it('returns its worker count through the `workerCount` property', function() {
             chai.expect(pool.workerCount).to.equal(2);
         });
 
