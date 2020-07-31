@@ -1,6 +1,6 @@
 {
     "name": "@dekkai/workers",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "description": "Worker tools to manage workers in the browser, node.js and deno",
     "main": "dist/index.js",
     "module": "dist/index.js",
