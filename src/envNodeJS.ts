@@ -37,6 +37,10 @@ export function supportsDynamicImport(): boolean {
     return kSupportsDynamicImport;
 }
 
+/**
+ * Type declaration for WebPack environments.
+ * @internal
+ */
 // declare `__non_webpack_require__` for WebPack environments
 // eslint-disable-next-line camelcase
 declare const __non_webpack_require__: any;
