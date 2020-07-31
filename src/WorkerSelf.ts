@@ -4,7 +4,7 @@ import {getModule, isNodeJS} from './envNodeJS';
 // fix `self` type for compilation
 declare const self: WorkerGlobalScope;
 
-class WorkerSelfWrapper {
+class WorkerSelf {
     private _ready: Promise<void> = this.initialize();
     public get ready(): Promise<void> {
         return this._ready;
@@ -57,5 +57,5 @@ class WorkerSelfWrapper {
     }
 }
 
-const WorkerSelf = new WorkerSelfWrapper();
-export {WorkerSelf};
+const WorkerSelfInstance = new WorkerSelf();
+export {WorkerSelfInstance as WorkerSelf};
