@@ -5,7 +5,7 @@ class Executor01 {
         return { result: 'pong' };
     }
     'test-removeTaskExecutor01'() {
-        WorkerInterface.instance.removeTaskExecutor(this);
+        WorkerInterface.removeTaskExecutor(this);
         return { result: 'ready'};
     }
     repeat(...args) {
@@ -47,7 +47,7 @@ class Executor02 {
         return { result: 'bar' };
     }
     'test-removeTaskExecutor02'() {
-        WorkerInterface.instance.removeTaskExecutor(this);
+        WorkerInterface.removeTaskExecutor(this);
         return { result: 'ready'};
     }
 }
@@ -69,13 +69,13 @@ async function main() {
         const task = msg.data.task;
         switch (task) {
             case 'test-addTaskExecutor01':
-                WorkerInterface.instance.addTaskExecutor(executor01);
+                WorkerInterface.addTaskExecutor(executor01);
                 _self.postMessage(node ? { data: 'ready'} : 'ready');
                 break;
 
             case 'test-addTaskExecutor-all':
-                WorkerInterface.instance.addTaskExecutor(executor01);
-                WorkerInterface.instance.addTaskExecutor(executor02);
+                WorkerInterface.addTaskExecutor(executor01);
+                WorkerInterface.addTaskExecutor(executor02);
                 _self.postMessage(node ? { data: 'ready'} : 'ready');
                 break;
 

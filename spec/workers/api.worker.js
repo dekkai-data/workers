@@ -45,4 +45,4 @@ class APIWorker {
     }
 }
 
-WorkerInterface.instance.addTaskExecutor(new APIWorker());
+WorkerInterface.addTaskExecutor(new APIWorker());

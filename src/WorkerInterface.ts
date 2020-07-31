@@ -1,20 +1,13 @@
 import {TaskResult, TaskExecutor} from './types';
 import {WorkerSelf} from './WorkerSelf';
 
-export class WorkerInterface {
-    private constructor(executor?: TaskExecutor) {
+class WorkerInterface {
+    constructor(executor?: TaskExecutor) {
         if (executor) {
             this.addTaskExecutor(executor);
         }
     }
 
-    private static _instance: WorkerInterface | null = null;
-    public static get instance(): WorkerInterface {
-        if (!this._instance) {
-            this._instance = new WorkerInterface();
-        }
-        return this._instance;
-    }
     private executorList: TaskExecutor[] = [];
     private boundHandleMessage: (e: MessageEvent) => Promise<void> = this.handleMessage.bind(this);
 
@@ -84,3 +77,6 @@ export class WorkerInterface {
         }, transferable);
     }
 }
+
+const WorkerInterfaceInstance = new WorkerInterface();
+export {WorkerInterfaceInstance as WorkerInterface};
