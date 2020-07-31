@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>WorkerSelfWrapper | @dekkai/workers - v0.0.1</title>
-	<meta name="description" content="Documentation for @dekkai/workers - v0.0.1">
+	<title>WorkerSelf | @dekkai/workers - v1.0.0</title>
+	<meta name="description" content="Documentation for @dekkai/workers - v1.0.0">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">@dekkai/workers - v0.0.1</a>
+					<a href="../index.html" class="title">@dekkai/workers - v1.0.0</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -56,21 +56,30 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="workerselfwrapper.html">WorkerSelfWrapper</a>
+					<a href="workerself.html">WorkerSelf</a>
 				</li>
 			</ul>
-			<h1>Class WorkerSelfWrapper</h1>
+			<h1>Class WorkerSelf</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Wrapper for the <a href="https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope">WorkerGlobalScope</a> in the
+						browser/deno and <a href="https://nodejs.org/api/worker_threads.html#worker_threads_class_messageport">MessagePort</a> in NodeJS.</p>
+					</div>
+					<p>This class is not meant to be used directly, instead, the <code>WorkerSelf</code> module exports a single instance of this class.</p>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">WorkerSelfWrapper</span>
+						<span class="target">WorkerSelf</span>
 					</li>
 				</ul>
 			</section>
@@ -78,55 +87,25 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="workerselfwrapper.html#_ready" class="tsd-kind-icon">_ready</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="workerselfwrapper.html#_self" class="tsd-kind-icon">_self</a></li>
-							</ul>
-						</section>
 						<section class="tsd-index-section ">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="workerselfwrapper.html#ready" class="tsd-kind-icon">ready</a></li>
-								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="workerselfwrapper.html#self" class="tsd-kind-icon">self</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="workerself.html#ready" class="tsd-kind-icon">ready</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="workerself.html#self" class="tsd-kind-icon">self</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="workerselfwrapper.html#addeventlistener" class="tsd-kind-icon">add<wbr>Event<wbr>Listener</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="workerselfwrapper.html#initialize" class="tsd-kind-icon">initialize</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="workerselfwrapper.html#off" class="tsd-kind-icon">off</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="workerselfwrapper.html#on" class="tsd-kind-icon">on</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="workerselfwrapper.html#postmessage" class="tsd-kind-icon">post<wbr>Message</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="workerselfwrapper.html#removeeventlistener" class="tsd-kind-icon">remove<wbr>Event<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="workerself.html#addeventlistener" class="tsd-kind-icon">add<wbr>Event<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="workerself.html#initialize" class="tsd-kind-icon">initialize</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="workerself.html#off" class="tsd-kind-icon">off</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="workerself.html#on" class="tsd-kind-icon">on</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="workerself.html#postmessage" class="tsd-kind-icon">post<wbr>Message</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="workerself.html#removeeventlistener" class="tsd-kind-icon">remove<wbr>Event<wbr>Listener</a></li>
 							</ul>
 						</section>
 					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="_ready" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _ready</h3>
-					<div class="tsd-signature tsd-kind-icon">_ready<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = this.initialize()</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/WorkerSelf.ts#L8">src/WorkerSelf.ts:8</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="_self" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _self</h3>
-					<div class="tsd-signature tsd-kind-icon">_self<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">WorkerGlobalScope</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">MessagePort</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/WorkerSelf.ts#L13">src/WorkerSelf.ts:13</a></li>
-						</ul>
-					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -141,9 +120,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/WorkerSelf.ts#L9">src/WorkerSelf.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/7af5b95/src/WorkerSelf.ts#L26">src/WorkerSelf.ts:26</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a promise that, when resolved, indicates when the WorkerSelfWrapper is ready to be used.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
@@ -158,9 +142,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/WorkerSelf.ts#L14">src/WorkerSelf.ts:14</a></li>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/7af5b95/src/WorkerSelf.ts#L40">src/WorkerSelf.ts:40</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the underlying <a href="https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope">WorkerGlobalScope</a> or
+									<a href="https://nodejs.org/api/worker_threads.html#worker_threads_class_messageport">MessagePort</a> for the platform.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">WorkerGlobalScope</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">MessagePort</span></h4>
 						</li>
 					</ul>
@@ -178,16 +168,28 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/WorkerSelf.ts#L41">src/WorkerSelf.ts:41</a></li>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/7af5b95/src/WorkerSelf.ts#L88">src/WorkerSelf.ts:88</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Minimum viable API to provide the browser&#39;s <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener"><code>addEventListener</code> API</a>
+									for all platforms.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>event: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The event to subscribe to.</p>
+									</div>
 								</li>
 								<li>
 									<h5>listener: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Event handler function</p>
+									</div>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-signature">
 											<ul class="tsd-signatures tsd-kind-type-literal">
@@ -222,9 +224,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/WorkerSelf.ts#L18">src/WorkerSelf.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/7af5b95/src/WorkerSelf.ts#L47">src/WorkerSelf.ts:47</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Initializes the underlying messaging system for the platform.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
@@ -239,16 +246,28 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/WorkerSelf.ts#L34">src/WorkerSelf.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/7af5b95/src/WorkerSelf.ts#L75">src/WorkerSelf.ts:75</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Minimum viable API to provide node&#39;s <a href="https://nodejs.org/api/events.html#events_emitter_off_eventname_listener"><code>off</code> API</a>
+									for all platforms.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>event: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The event to unsubscribe from</p>
+									</div>
 								</li>
 								<li>
 									<h5>listener: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Event handler function that was registered using either <code>on</code> or <code>addEventListener</code></p>
+									</div>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-signature">
 											<ul class="tsd-signatures tsd-kind-type-literal">
@@ -283,16 +302,28 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/WorkerSelf.ts#L27">src/WorkerSelf.ts:27</a></li>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/7af5b95/src/WorkerSelf.ts#L62">src/WorkerSelf.ts:62</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Minimum viable API to provide node&#39;s <a href="https://nodejs.org/api/events.html#events_emitter_on_eventname_listener"><code>on</code> API</a>
+									for all platforms.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>event: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The event to subscribe to.</p>
+									</div>
 								</li>
 								<li>
 									<h5>listener: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Event handler function</p>
+									</div>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-signature">
 											<ul class="tsd-signatures tsd-kind-type-literal">
@@ -327,16 +358,29 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/WorkerSelf.ts#L55">src/WorkerSelf.ts:55</a></li>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/7af5b95/src/WorkerSelf.ts#L115">src/WorkerSelf.ts:115</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Posts a message to the code owner of this worker thread, this is meant to be homogeneous across platforms.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>message: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The message to send to the worker, can be anything that is supported by the
+										<a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm">structured clone algorithm</a></p>
+									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> transferList: <span class="tsd-signature-type">ArrayBuffer</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Objects to transfer to the worker, limited to <code>ArrayBuffer</code> objects as a minimum viable
+										API on all platforms.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -353,16 +397,28 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/WorkerSelf.ts#L48">src/WorkerSelf.ts:48</a></li>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/7af5b95/src/WorkerSelf.ts#L101">src/WorkerSelf.ts:101</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Minimum viable API to provide the browser&#39;s <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener"><code>removeEventListener</code> API</a>
+									for all platforms.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>event: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The event to unsubscribe from</p>
+									</div>
 								</li>
 								<li>
 									<h5>listener: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Event handler function that was registered using either <code>on</code> or <code>addEventListener</code></p>
+									</div>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-signature">
 											<ul class="tsd-signatures tsd-kind-type-literal">
@@ -399,7 +455,7 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class">
+					<li class=" tsd-kind-class tsd-is-private">
 						<a href="workerinterface.html" class="tsd-kind-icon">Worker<wbr>Interface</a>
 					</li>
 					<li class=" tsd-kind-class">
@@ -407,38 +463,32 @@
 					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-class">
-						<a href="workerselfwrapper.html" class="tsd-kind-icon">Worker<wbr>Self<wbr>Wrapper</a>
+					<li class="current tsd-kind-class tsd-is-private">
+						<a href="workerself.html" class="tsd-kind-icon">Worker<wbr>Self</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="workerselfwrapper.html#_ready" class="tsd-kind-icon">_ready</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="workerselfwrapper.html#_self" class="tsd-kind-icon">_self</a>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="workerself.html#ready" class="tsd-kind-icon">ready</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
-								<a href="workerselfwrapper.html#ready" class="tsd-kind-icon">ready</a>
-							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
-								<a href="workerselfwrapper.html#self" class="tsd-kind-icon">self</a>
+								<a href="workerself.html#self" class="tsd-kind-icon">self</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="workerselfwrapper.html#addeventlistener" class="tsd-kind-icon">add<wbr>Event<wbr>Listener</a>
+								<a href="workerself.html#addeventlistener" class="tsd-kind-icon">add<wbr>Event<wbr>Listener</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="workerselfwrapper.html#initialize" class="tsd-kind-icon">initialize</a>
+								<a href="workerself.html#initialize" class="tsd-kind-icon">initialize</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="workerselfwrapper.html#off" class="tsd-kind-icon">off</a>
+								<a href="workerself.html#off" class="tsd-kind-icon">off</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="workerselfwrapper.html#on" class="tsd-kind-icon">on</a>
+								<a href="workerself.html#on" class="tsd-kind-icon">on</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="workerselfwrapper.html#postmessage" class="tsd-kind-icon">post<wbr>Message</a>
+								<a href="workerself.html#postmessage" class="tsd-kind-icon">post<wbr>Message</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="workerselfwrapper.html#removeeventlistener" class="tsd-kind-icon">remove<wbr>Event<wbr>Listener</a>
+								<a href="workerself.html#removeeventlistener" class="tsd-kind-icon">remove<wbr>Event<wbr>Listener</a>
 							</li>
 						</ul>
 					</li>
@@ -468,30 +518,6 @@
 					<li class=" tsd-kind-type-alias">
 						<a href="../globals.html#webworker" class="tsd-kind-icon">Web<wbr>Worker</a>
 					</li>
-					<li class=" tsd-kind-variable">
-						<a href="../globals.html#workerself" class="tsd-kind-icon">Worker<wbr>Self</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="../globals.html#__non_webpack_require__" class="tsd-kind-icon">__non_<wbr>webpack_<wbr>require__</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="../globals.html#kisnodejs" class="tsd-kind-icon">k<wbr>IsNodeJS</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="../globals.html#kpathpromise" class="tsd-kind-icon">k<wbr>Path<wbr>Promise</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="../globals.html#ksupportsdynamicimport" class="tsd-kind-icon">k<wbr>Supports<wbr>Dynamic<wbr>Import</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="../globals.html#kworkerpromise" class="tsd-kind-icon">k<wbr>Worker<wbr>Promise</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="../globals.html#self" class="tsd-kind-icon">self</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="../globals.html#checkdynamicimport" class="tsd-kind-icon">check<wbr>Dynamic<wbr>Import</a>
-					</li>
 					<li class=" tsd-kind-function">
 						<a href="../globals.html#getmodule" class="tsd-kind-icon">get<wbr>Module</a>
 					</li>
@@ -519,11 +545,10 @@
 				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
 			</ul>
 		</div>
 	</div>

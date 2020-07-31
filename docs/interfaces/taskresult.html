@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>TaskResult | @dekkai/workers - v0.0.1</title>
-	<meta name="description" content="Documentation for @dekkai/workers - v0.0.1">
+	<title>TaskResult | @dekkai/workers - v1.0.0</title>
+	<meta name="description" content="Documentation for @dekkai/workers - v1.0.0">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">@dekkai/workers - v0.0.1</a>
+					<a href="../index.html" class="title">@dekkai/workers - v1.0.0</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -116,7 +116,7 @@
 					<div class="tsd-signature tsd-kind-icon">result<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">T</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/types.ts#L11">src/types.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/7af5b95/src/types.ts#L11">src/types.ts:11</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -131,7 +131,7 @@
 					<div class="tsd-signature tsd-kind-icon">transfer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ArrayBuffer</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/types.ts#L15">src/types.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/7af5b95/src/types.ts#L15">src/types.ts:15</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -152,14 +152,14 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class">
+					<li class=" tsd-kind-class tsd-is-private">
 						<a href="../classes/workerinterface.html" class="tsd-kind-icon">Worker<wbr>Interface</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="../classes/workerpool.html" class="tsd-kind-icon">Worker<wbr>Pool</a>
 					</li>
-					<li class=" tsd-kind-class">
-						<a href="../classes/workerselfwrapper.html" class="tsd-kind-icon">Worker<wbr>Self<wbr>Wrapper</a>
+					<li class=" tsd-kind-class tsd-is-private">
+						<a href="../classes/workerself.html" class="tsd-kind-icon">Worker<wbr>Self</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="../classes/workerwrapper.html" class="tsd-kind-icon">Worker<wbr>Wrapper</a>
@@ -197,30 +197,6 @@
 					<li class=" tsd-kind-type-alias">
 						<a href="../globals.html#webworker" class="tsd-kind-icon">Web<wbr>Worker</a>
 					</li>
-					<li class=" tsd-kind-variable">
-						<a href="../globals.html#workerself" class="tsd-kind-icon">Worker<wbr>Self</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="../globals.html#__non_webpack_require__" class="tsd-kind-icon">__non_<wbr>webpack_<wbr>require__</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="../globals.html#kisnodejs" class="tsd-kind-icon">k<wbr>IsNodeJS</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="../globals.html#kpathpromise" class="tsd-kind-icon">k<wbr>Path<wbr>Promise</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="../globals.html#ksupportsdynamicimport" class="tsd-kind-icon">k<wbr>Supports<wbr>Dynamic<wbr>Import</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="../globals.html#kworkerpromise" class="tsd-kind-icon">k<wbr>Worker<wbr>Promise</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="../globals.html#self" class="tsd-kind-icon">self</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="../globals.html#checkdynamicimport" class="tsd-kind-icon">check<wbr>Dynamic<wbr>Import</a>
-					</li>
 					<li class=" tsd-kind-function">
 						<a href="../globals.html#getmodule" class="tsd-kind-icon">get<wbr>Module</a>
 					</li>
@@ -248,11 +224,10 @@
 				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
 			</ul>
 		</div>
 	</div>

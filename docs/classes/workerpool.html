@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>WorkerPool | @dekkai/workers - v0.0.1</title>
-	<meta name="description" content="Documentation for @dekkai/workers - v0.0.1">
+	<title>WorkerPool | @dekkai/workers - v1.0.0</title>
+	<meta name="description" content="Documentation for @dekkai/workers - v1.0.0">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">@dekkai/workers - v0.0.1</a>
+					<a href="../index.html" class="title">@dekkai/workers - v1.0.0</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -66,6 +66,13 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Class to manage multiple workers, send tasks to them and receive results.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -84,13 +91,12 @@
 								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="workerpool.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="workerpool.html#idleworkers" class="tsd-kind-icon">idle<wbr>Workers</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="workerpool.html#tasks" class="tsd-kind-icon">tasks</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="workerpool.html#workers" class="tsd-kind-icon">workers</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="workerpool.html#_sharedinstance" class="tsd-kind-icon">_shared<wbr>Instance</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -134,13 +140,20 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/WorkerPool.ts#L13">src/WorkerPool.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/7af5b95/src/WorkerPool.ts#L8">src/WorkerPool.ts:8</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> workers: <span class="tsd-signature-type">Worker</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Workers to be added to this pool immediately.</p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="workerpool.html" class="tsd-signature-type">WorkerPool</a></h4>
@@ -148,7 +161,7 @@
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="idleworkers" class="tsd-anchor"></a>
@@ -156,9 +169,14 @@
 					<div class="tsd-signature tsd-kind-icon">idle<wbr>Workers<span class="tsd-signature-symbol">:</span> <a href="workerwrapper.html" class="tsd-signature-type">WorkerWrapper</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/WorkerPool.ts#L12">src/WorkerPool.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/7af5b95/src/WorkerPool.ts#L37">src/WorkerPool.ts:37</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>List of the idle workers in this pool.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="tasks" class="tsd-anchor"></a>
@@ -166,9 +184,14 @@
 					<div class="tsd-signature tsd-kind-icon">tasks<span class="tsd-signature-symbol">:</span> <a href="../interfaces/workertask.html" class="tsd-signature-type">WorkerTask</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/WorkerPool.ts#L13">src/WorkerPool.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/7af5b95/src/WorkerPool.ts#L41">src/WorkerPool.ts:41</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>List of queued tasks in this pool.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="workers" class="tsd-anchor"></a>
@@ -176,19 +199,14 @@
 					<div class="tsd-signature tsd-kind-icon">workers<span class="tsd-signature-symbol">:</span> <a href="workerwrapper.html" class="tsd-signature-type">WorkerWrapper</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/WorkerPool.ts#L11">src/WorkerPool.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/7af5b95/src/WorkerPool.ts#L33">src/WorkerPool.ts:33</a></li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
-					<a name="_sharedinstance" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> _shared<wbr>Instance</h3>
-					<div class="tsd-signature tsd-kind-icon">_shared<wbr>Instance<span class="tsd-signature-symbol">:</span> <a href="workerpool.html" class="tsd-signature-type">WorkerPool</a><span class="tsd-signature-symbol"> = new WorkerPool()</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/WorkerPool.ts#L6">src/WorkerPool.ts:6</a></li>
-						</ul>
-					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A list of all the workers in this pool.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -203,9 +221,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/WorkerPool.ts#L25">src/WorkerPool.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/7af5b95/src/WorkerPool.ts#L53">src/WorkerPool.ts:53</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns whether or not there are tasks running in this pool.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
@@ -220,9 +243,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/WorkerPool.ts#L21">src/WorkerPool.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/7af5b95/src/WorkerPool.ts#L46">src/WorkerPool.ts:46</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the total number of workers held by this pool.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
@@ -237,9 +265,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/WorkerPool.ts#L7">src/WorkerPool.ts:7</a></li>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/7af5b95/src/WorkerPool.ts#L26">src/WorkerPool.ts:26</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a  class instance that can be used as a singleton.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <a href="workerpool.html" class="tsd-signature-type">WorkerPool</a></h4>
 						</li>
 					</ul>
@@ -257,16 +290,27 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/WorkerPool.ts#L61">src/WorkerPool.ts:61</a></li>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/7af5b95/src/WorkerPool.ts#L110">src/WorkerPool.ts:110</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Adds the specified worker to this pool and, optionally, runs an init task.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>worker: <a href="../globals.html#anyworker" class="tsd-signature-type">AnyWorker</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The worker to add</p>
+									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> initTask: <a href="../interfaces/workertask.html" class="tsd-signature-type">WorkerTask</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Init task to be executed immediately on the worker</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -283,16 +327,27 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/WorkerPool.ts#L76">src/WorkerPool.ts:76</a></li>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/7af5b95/src/WorkerPool.ts#L130">src/WorkerPool.ts:130</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Adds an array of workers to this pool and, optionally, runs an init task on them.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>workers: <a href="../globals.html#anyworker" class="tsd-signature-type">AnyWorker</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A list of workers to add</p>
+									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> initTask: <a href="../interfaces/workertask.html" class="tsd-signature-type">WorkerTask</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Init task to be executed immediately on each of the workers added</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -309,9 +364,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/WorkerPool.ts#L29">src/WorkerPool.ts:29</a></li>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/7af5b95/src/WorkerPool.ts#L62">src/WorkerPool.ts:62</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Cancels all pending tasks in this pool.</p>
+								</div>
+								<p><strong>WARNING:</strong> Tasks that have already been sent to workers are <em>NOT</em> cancelled.</p>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -326,13 +387,22 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/WorkerPool.ts#L36">src/WorkerPool.ts:36</a></li>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/7af5b95/src/WorkerPool.ts#L75">src/WorkerPool.ts:75</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Cancels pending tasks of the specified type.</p>
+								</div>
+								<p><strong>WARNING:</strong> Tasks that have already been sent to workers are <em>NOT</em> cancelled.</p>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>task: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/workertask.html" class="tsd-signature-type">WorkerTask</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The task id (name) or a task instance to be cancelled.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -349,16 +419,29 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/WorkerPool.ts#L136">src/WorkerPool.ts:136</a></li>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/7af5b95/src/WorkerPool.ts#L226">src/WorkerPool.ts:226</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Executes the specified task in the worker provided and listens for a response. If a success message is received
+										from the worker, the task promise is resolved with the results, the promise is rejected with an explanation
+									otherwise.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>worker: <a href="workerwrapper.html" class="tsd-signature-type">WorkerWrapper</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Worker which will run the task</p>
+									</div>
 								</li>
 								<li>
 									<h5>task: <a href="../interfaces/workertask.html" class="tsd-signature-type">WorkerTask</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Task to execute</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -375,13 +458,22 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/WorkerPool.ts#L160">src/WorkerPool.ts:160</a></li>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/7af5b95/src/WorkerPool.ts#L255">src/WorkerPool.ts:255</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Checks if there are pending tasks in the queue, if so, the next task is executed in the worker provided. If no
+									tasks are pending, the worker is flagged as idle.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>worker: <a href="workerwrapper.html" class="tsd-signature-type">WorkerWrapper</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Worker that will execute a task or be marked as idle.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -398,9 +490,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/WorkerPool.ts#L53">src/WorkerPool.ts:53</a></li>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/7af5b95/src/WorkerPool.ts#L97">src/WorkerPool.ts:97</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Immediately kills all the workers in this pool.</p>
+								</div>
+								<p><strong>WARNING:</strong> Pending and running tasks will not resolve their promises when this method is called.</p>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -415,19 +513,34 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/WorkerPool.ts#L94">src/WorkerPool.ts:94</a></li>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/7af5b95/src/WorkerPool.ts#L158">src/WorkerPool.ts:158</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Makes a <a href="../interfaces/workertask.html">WorkerTask</a> to be executed by any of the workers in this pool.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>id: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The task id (name) to execute</p>
+									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Any arguments that need to be passed to the task as described in the <a href="../globals.html#taskexecutor">TaskExecutor</a></p>
+									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> transferable: <span class="tsd-signature-type">ArrayBuffer</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>List of objects that will be transferred to the worker. <strong>NOTE:</strong> Transferred objects are
+										invalidated after the task is sent and cannot be used anymore.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/workertask.html" class="tsd-signature-type">WorkerTask</a></h4>
@@ -444,9 +557,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/WorkerPool.ts#L84">src/WorkerPool.ts:84</a></li>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/7af5b95/src/WorkerPool.ts#L141">src/WorkerPool.ts:141</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Removes a single worker from the pool, there are no guarantees as to which worker will be removed.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <a href="../globals.html#platformworker" class="tsd-signature-type">PlatformWorker</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h4>
 						</li>
 					</ul>
@@ -461,13 +579,22 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/WorkerPool.ts#L102">src/WorkerPool.ts:102</a></li>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/7af5b95/src/WorkerPool.ts#L171">src/WorkerPool.ts:171</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Schedules a task to be executed in a worker as soon as one is available. There are no guarantees as of which
+									worker will perform the task.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>task: <a href="../interfaces/workertask.html" class="tsd-signature-type">WorkerTask</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Task to schedule</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -484,13 +611,22 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/WorkerPool.ts#L113">src/WorkerPool.ts:113</a></li>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/7af5b95/src/WorkerPool.ts#L187">src/WorkerPool.ts:187</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Schedules an array of tasks to be executed in workers as soon as they become available. There are no guarantees
+									as of which workers will perform the tasks.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>tasks: <a href="../interfaces/workertask.html" class="tsd-signature-type">WorkerTask</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>List of tasks to execute</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -507,13 +643,22 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/WorkerPool.ts#L121">src/WorkerPool.ts:121</a></li>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/7af5b95/src/WorkerPool.ts#L200">src/WorkerPool.ts:200</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Wraps a worker in a <a href="workerwrapper.html">WorkerWrapper</a> instance, if the worker is already wrapped, this function simply returns
+									the already wrapped worker.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>worker: <a href="../globals.html#anyworker" class="tsd-signature-type">AnyWorker</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Worker to wrap</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="workerwrapper.html" class="tsd-signature-type">WorkerWrapper</a></h4>
@@ -530,13 +675,21 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/f7caa23/src/WorkerPool.ts#L128">src/WorkerPool.ts:128</a></li>
+									<li>Defined in <a href="https://github.com/dekkai-csv/workers/blob/7af5b95/src/WorkerPool.ts#L211">src/WorkerPool.ts:211</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Wraps multiple workers in <a href="workerwrapper.html">WorkerWrapper</a> instances, worker that are already wrapped are returned as-is.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>workers: <a href="../globals.html#anyworker" class="tsd-signature-type">AnyWorker</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>List of workers to wrap</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="workerwrapper.html" class="tsd-signature-type">WorkerWrapper</a><span class="tsd-signature-symbol">[]</span></h4>
@@ -555,7 +708,7 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class">
+					<li class=" tsd-kind-class tsd-is-private">
 						<a href="workerinterface.html" class="tsd-kind-icon">Worker<wbr>Interface</a>
 					</li>
 				</ul>
@@ -574,9 +727,6 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="workerpool.html#workers" class="tsd-kind-icon">workers</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
-								<a href="workerpool.html#_sharedinstance" class="tsd-kind-icon">_shared<wbr>Instance</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="workerpool.html#running" class="tsd-kind-icon">running</a>
@@ -630,8 +780,8 @@
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-class">
-						<a href="workerselfwrapper.html" class="tsd-kind-icon">Worker<wbr>Self<wbr>Wrapper</a>
+					<li class=" tsd-kind-class tsd-is-private">
+						<a href="workerself.html" class="tsd-kind-icon">Worker<wbr>Self</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="workerwrapper.html" class="tsd-kind-icon">Worker<wbr>Wrapper</a>
@@ -656,30 +806,6 @@
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="../globals.html#webworker" class="tsd-kind-icon">Web<wbr>Worker</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="../globals.html#workerself" class="tsd-kind-icon">Worker<wbr>Self</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="../globals.html#__non_webpack_require__" class="tsd-kind-icon">__non_<wbr>webpack_<wbr>require__</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="../globals.html#kisnodejs" class="tsd-kind-icon">k<wbr>IsNodeJS</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="../globals.html#kpathpromise" class="tsd-kind-icon">k<wbr>Path<wbr>Promise</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="../globals.html#ksupportsdynamicimport" class="tsd-kind-icon">k<wbr>Supports<wbr>Dynamic<wbr>Import</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="../globals.html#kworkerpromise" class="tsd-kind-icon">k<wbr>Worker<wbr>Promise</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="../globals.html#self" class="tsd-kind-icon">self</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="../globals.html#checkdynamicimport" class="tsd-kind-icon">check<wbr>Dynamic<wbr>Import</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="../globals.html#getmodule" class="tsd-kind-icon">get<wbr>Module</a>
@@ -708,11 +834,10 @@
 				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
 			</ul>
 		</div>
 	</div>
