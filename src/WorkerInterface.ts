@@ -2,12 +2,6 @@ import {TaskResult, TaskExecutor} from './types';
 import {WorkerSelf} from './WorkerSelf';
 
 class WorkerInterface {
-    constructor(executor?: TaskExecutor) {
-        if (executor) {
-            this.addTaskExecutor(executor);
-        }
-    }
-
     private executorList: TaskExecutor[] = [];
     private boundHandleMessage: (e: MessageEvent) => Promise<void> = this.handleMessage.bind(this);
 
