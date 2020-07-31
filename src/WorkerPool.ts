@@ -2,30 +2,63 @@ import {AnyWorker, PlatformWorker} from './types';
 import {WorkerTask} from './types';
 import {WorkerWrapper} from './WorkerWrapper';
 
+/**
+ * Class to manage multiple workers, send tasks to them and receive results.
+ */
 export class WorkerPool {
-    static _sharedInstance = new WorkerPool();
-    static get sharedInstance(): WorkerPool {
-        return this._sharedInstance;
-    }
-
-    private workers: WorkerWrapper[];
-    private idleWorkers: WorkerWrapper[];
-    private tasks: WorkerTask[];
-
+    /**
+     * @param workers - Workers to be added to this pool immediately.
+     */
     constructor(workers: Worker[] = []) {
         this.workers = this.wrapWorkers(workers);
         this.idleWorkers = [...this.workers];
         this.tasks = [];
     }
 
+    /**
+     * Class instance that can be used as a singleton.
+     * @internal
+     */
+    static _sharedInstance = new WorkerPool();
+    /**
+     * Returns a  class instance that can be used as a singleton.
+     */
+    static get sharedInstance(): WorkerPool {
+        return this._sharedInstance;
+    }
+
+    /**
+     * A list of all the workers in this pool.
+     */
+    private workers: WorkerWrapper[];
+    /**
+     * List of the idle workers in this pool.
+     */
+    private idleWorkers: WorkerWrapper[];
+    /**
+     * List of queued tasks in this pool.
+     */
+    private tasks: WorkerTask[];
+
+    /**
+     * Returns the total number of workers held by this pool.
+     */
     public get workerCount(): number {
         return this.workers.length;
     }
 
+    /**
+     * Returns whether or not there are tasks running in this pool.
+     */
     public get running(): boolean {
         return Boolean(this.tasks.length || this.idleWorkers.length !== this.workers.length);
     }
 
+    /**
+     * Cancels all pending tasks in this pool.
+     *
+     * **WARNING:** Tasks that have already been sent to workers are *NOT* cancelled.
+     */
     public cancelAllPending(): void {
         for (let i = 0, n = this.tasks.length; i < n; ++i) {
             this.tasks[i].resolve(null);
@@ -33,6 +66,12 @@ export class WorkerPool {
         this.tasks.length = 0;
     }
 
+    /**
+     * Cancels pending tasks of the specified type.
+     *
+     * **WARNING:** Tasks that have already been sent to workers are *NOT* cancelled.
+     * @param task - The task id (name) or a task instance to be cancelled.
+     */
     public cancelPending(task: string | WorkerTask): void {
         let id;
         if (typeof task === 'string' || task instanceof String) {
@@ -50,6 +89,11 @@ export class WorkerPool {
         });
     }
 
+    /**
+     * Immediately kills all the workers in this pool.
+     *
+     * **WARNING:** Pending and running tasks will not resolve their promises when this method is called.
+     */
     public killWorkers(): void {
         for (let i = 0, n = this.workers.length; i < n; ++i) {
             this.workers[i].terminate();
@@ -58,6 +102,11 @@ export class WorkerPool {
         this.idleWorkers.length = 0;
     }
 
+    /**
+     * Adds the specified worker to this pool and, optionally, runs an init task.
+     * @param worker - The worker to add
+     * @param initTask - Init task to be executed immediately on the worker
+     */
     public addWorker(worker: AnyWorker, initTask?: WorkerTask): Promise<any> {
         const wrappedWorker = this.wrapWorker(worker);
         this.workers.push(wrappedWorker);
@@ -73,6 +122,11 @@ export class WorkerPool {
         return Promise.resolve();
     }
 
+    /**
+     * Adds an array of workers to this pool and, optionally, runs an init task on them.
+     * @param workers - A list of workers to add
+     * @param initTask - Init task to be executed immediately on each of the workers added
+     */
     public addWorkers(workers: AnyWorker[], initTask?: WorkerTask): Promise<any[]> {
         const promises = [];
         for (let i = 0, n = workers.length; i < n; ++i) {
@@ -81,6 +135,9 @@ export class WorkerPool {
         return Promise.all(promises);
     }
 
+    /**
+     * Removes a single worker from the pool, there are no guarantees as to which worker will be removed.
+     */
     public removeWorker(): PlatformWorker | null {
         if (this.idleWorkers.length) {
             const worker = this.idleWorkers.pop();
@@ -91,6 +148,13 @@ export class WorkerPool {
         return null;
     }
 
+    /**
+     * Makes a [[WorkerTask]] to be executed by any of the workers in this pool.
+     * @param id - The task id (name) to execute
+     * @param args - Any arguments that need to be passed to the task as described in the [[TaskExecutor]]
+     * @param transferable - List of objects that will be transferred to the worker. **NOTE:** Transferred objects are
+     * invalidated after the task is sent and cannot be used anymore.
+     */
     public makeTask(id: string, args: any[] = [], transferable: ArrayBuffer[] = []): WorkerTask {
         return {
             id,
@@ -99,6 +163,11 @@ export class WorkerPool {
         };
     }
 
+    /**
+     * Schedules a task to be executed in a worker as soon as one is available. There are no guarantees as of which
+     * worker will perform the task.
+     * @param task - Task to schedule
+     */
     public scheduleTask(task: WorkerTask): Promise<any> {
         return new Promise((resolve, reject) => {
             const asyncTask = Object.assign({}, task, { resolve, reject });
@@ -110,6 +179,11 @@ export class WorkerPool {
         });
     }
 
+    /**
+     * Schedules an array of tasks to be executed in workers as soon as they become available. There are no guarantees
+     * as of which workers will perform the tasks.
+     * @param tasks - List of tasks to execute
+     */
     public scheduleTasks(tasks: WorkerTask[]): Promise<any[]> {
         const promises = [];
         for (let i = 0, n = tasks.length; i < n; ++i) {
@@ -118,6 +192,11 @@ export class WorkerPool {
         return Promise.all(promises);
     }
 
+    /**
+     * Wraps a worker in a [[WorkerWrapper]] instance, if the worker is already wrapped, this function simply returns
+     * the already wrapped worker.
+     * @param worker - Worker to wrap
+     */
     private wrapWorker(worker: AnyWorker): WorkerWrapper {
         if (!(worker instanceof WorkerWrapper)) {
             return new WorkerWrapper(worker);
@@ -125,6 +204,10 @@ export class WorkerPool {
         return worker;
     }
 
+    /**
+     * Wraps multiple workers in [[WorkerWrapper]] instances, worker that are already wrapped are returned as-is.
+     * @param workers - List of workers to wrap
+     */
     private wrapWorkers(workers: AnyWorker[]): WorkerWrapper[] {
         const result = [];
         for (let i = 0, n = workers.length; i < n; ++i) {
@@ -133,6 +216,13 @@ export class WorkerPool {
         return result;
     }
 
+    /**
+     * Executes the specified task in the worker provided and listens for a response. If a success message is received
+     * from the worker, the task promise is resolved with the results, the promise is rejected with an explanation
+     * otherwise.
+     * @param worker - Worker which will run the task
+     * @param task - Task to execute
+     */
     private executeTask(worker: WorkerWrapper, task: WorkerTask): void {
         const handler = (e): void => {
             const message = e.data;
@@ -157,6 +247,11 @@ export class WorkerPool {
         worker.postMessage(message, task.transferable);
     }
 
+    /**
+     * Checks if there are pending tasks in the queue, if so, the next task is executed in the worker provided. If no
+     * tasks are pending, the worker is flagged as idle.
+     * @param worker - Worker that will execute a task or be marked as idle.
+     */
     private executeTaskFromQueue(worker: WorkerWrapper): void {
         if (this.tasks.length) {
             const task = this.tasks.pop();

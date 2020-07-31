@@ -45,12 +45,12 @@ export interface WorkerTask {
 
 /**
  * Any object added to a [[WorkerInterface]] as a task executor must comply with a few rules:
- * Any object added to a [[WorkerInterface]] as a task executor must comply with a few rules:
  * - Must implement functions as top level properties.
  * - Functions that are to be used as tasks must return a [[TaskResult]]
  *
  * Each function exposed in the object as a top level property will be exposed as a task by a [[WorkerInterface]].
- * A TaskExecutor can be an instance of a class or a plain object with functions as properties.
+ *
+ * A `TaskExecutor` can be an instance of a class or a plain object with functions as properties.
  */
 export type TaskExecutor = any;
 
