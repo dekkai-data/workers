@@ -1,6 +1,6 @@
 {
     "name": "@dekkai/workers",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Worker tools to manage workers in the browser, node.js and deno",
     "main": "build/lib/mod.js",
     "module": "build/lib/mod.js",
