@@ -1,4 +1,4 @@
-import {WorkerWrapper} from '../../dist/WorkerWrapper.js';
+import {WorkerWrapper} from '../../build/lib/WorkerWrapper.js';
 
 function run(env) {
     const {
@@ -29,7 +29,7 @@ function run(env) {
         });
 
         it('can instantiate workers for the platform at runtime', async function() {
-            const result = await WorkerWrapper.createWorker('../spec/workers/wrapper.worker.js');
+            const result = await WorkerWrapper.createWorker('../../spec/workers/wrapper.worker.js');
             chai.expect(result instanceof WorkerWrapper).to.equal(true);
             chai.expect(isWorker(result.worker)).to.equal(true);
             result.terminate();

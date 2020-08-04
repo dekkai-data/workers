@@ -1,4 +1,4 @@
-import {WorkerInterface} from '../../dist/WorkerInterface.js';
+import {WorkerInterface} from '../../build/dist/mod.js';
 
 class APIWorker {
     initialize() {

@@ -1,5 +1,5 @@
-import {WorkerWrapper} from '../../dist/WorkerWrapper.js';
-import {WorkerPool} from '../../dist/WorkerPool.js';
+import {WorkerWrapper} from '../../build/lib/WorkerWrapper.js';
+import {WorkerPool} from '../../build/lib/WorkerPool.js';
 
 function run(env) {
     const {

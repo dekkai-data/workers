@@ -1,4 +1,4 @@
-import {WorkerPool} from '../../dist/WorkerPool.js';
+import {WorkerPool} from '../../build/dist/mod.js';
 
 // these tests are supposed to test the basic usage of the complete system.
 function run(env) {

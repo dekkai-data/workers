@@ -16,7 +16,7 @@ module.exports = function(config) {
                 type: 'module',
             },
             {
-                pattern: 'dist/**/*.js',
+                pattern: 'build/**/*.js',
                 type: 'module',
             },
         ],

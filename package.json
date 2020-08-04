@@ -2,16 +2,16 @@
     "name": "@dekkai/workers",
     "version": "1.0.0",
     "description": "Worker tools to manage workers in the browser, node.js and deno",
-    "main": "dist/index.js",
-    "module": "dist/index.js",
-    "jsnext:main": "dist/index.js",
-    "types": "dist/index.d.ts",
+    "main": "build/lib/index.js",
+    "module": "build/lib/index.js",
+    "jsnext:main": "build/lib/index.js",
+    "types": "dist/lib/index.d.ts",
     "repository": "https://github.com/dekkai-csv/workers.git",
     "author": "Dario Segura <darionco.dev@gmail.com>",
     "license": "MIT",
     "type": "module",
     "files": [
-        "dist/",
+        "build/",
         "src/"
     ],
     "keywords": [
@@ -23,10 +23,10 @@
         "wrapper"
     ],
     "scripts": {
-        "clean": "rimraf dist",
+        "clean": "rimraf build",
         "build": "run-p build:**",
         "build:scripts": "rollup --config",
-        "build:types": "tsc --declaration --emitDeclarationOnly --skipLibCheck --outDir ./dist",
+        "build:types": "tsc --declaration --emitDeclarationOnly --skipLibCheck --outDir ./build/lib",
         "docs": "typedoc --out ./docs ./src --exclude 'node_modules/**/*' --mode file --includeVersion --stripInternal",
         "watch": "yarn build --watch",
         "test": "run-s build test:**",
