@@ -24,7 +24,7 @@ function generateConfig(type) {
         case 'dist':
         default:
             buildDir = path.resolve(__dirname, 'build/dist');
-            input['mod'] = path.resolve(__dirname, 'src/index.ts');
+            input['mod'] = path.resolve(__dirname, 'src/mod.ts');
             break;
     }
 
