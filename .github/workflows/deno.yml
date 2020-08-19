@@ -1,4 +1,4 @@
-name: CI
+name: deno
 
 on: [push, pull_request] # Run on Push and Pull Requests
 
@@ -10,13 +10,18 @@ jobs:
     strategy:
       matrix:
         node-version: [14.x]
+        deno: [1.x]
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - name: Setup deno ${{ matrix.deno }}
+      uses: denolib/setup-deno@v2
+      with:
+        deno-version: ${{ matrix.deno }}
     - run: npm install -g yarn
     - name: install
       run: yarn
@@ -25,4 +30,4 @@ jobs:
     - name: build
       run: yarn build
     - name: test
-      run: yarn test
+      run: "yarn _test:deno"
