@@ -1,7 +1,9 @@
 <div align="center">
 
 ![@dekkai/workers](https://raw.githubusercontent.com/dekkai-data/assets/master/svg/dekkai_workers_banner_light.svg)  
-![CI](https://github.com/dekkai-data/workers/workflows/CI/badge.svg)
+![browser](https://github.com/dekkai-data/workers/workflows/browser/badge.svg)
+![node](https://github.com/dekkai-data/workers/workflows/node/badge.svg)
+![deno](https://github.com/dekkai-data/workers/workflows/deno/badge.svg)
 ![opinion](https://img.shields.io/badge/badges_are-meaningless-blue)
 
 </div>
