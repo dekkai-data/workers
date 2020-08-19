@@ -32,4 +32,6 @@ function onCompleted(failures) {
 
 // Browser based Mocha requires `window.location` to exist.
 window.location = new URL('http://localhost:0');
+
+mocha.color(true);
 mocha.run(onCompleted).globals(['onerror']);

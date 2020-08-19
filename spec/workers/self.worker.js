@@ -1,4 +1,4 @@
-import {WorkerSelf} from '../../build/lib/WorkerSelf.js';
+import {WorkerSelf} from '../../build/dist/mod.js';
 
 async function main() {
     let _self;

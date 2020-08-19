@@ -1,4 +1,4 @@
-import {WorkerInterface} from '../../build/lib/WorkerInterface.js';
+import {WorkerInterface} from '../../build/dist/mod.js';
 
 class Executor01 {
     ping() {
