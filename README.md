@@ -1,7 +1,7 @@
 <div align="center">
 
-![@dekkai/workers](https://raw.githubusercontent.com/dekkai-csv/assets/master/svg/dekkai_workers_banner_light.svg)  
-![CI](https://github.com/dekkai-csv/workers/workflows/CI/badge.svg)
+![@dekkai/workers](https://raw.githubusercontent.com/dekkai-data/assets/master/svg/dekkai_workers_banner_light.svg)  
+![CI](https://github.com/dekkai-data/workers/workflows/CI/badge.svg)
 ![opinion](https://img.shields.io/badge/badges_are-meaningless-blue)
 
 </div>
@@ -18,7 +18,7 @@ Provides a minimum common API between all the platforms through wrappers:
 - **WorkerPool:** Class to schedule tasks and handling messages with multiple workers.
 - **envNodeJS:** Utility functions to detect node and handle loading CommonJS (`require`) and ES Modules (`import`).
 
-Check out the full [API Documentation](https://dekkai-csv.github.io/workers/)
+Check out the full [API Documentation](https://dekkai-data.github.io/workers/)
 
 ## Installation
 
@@ -95,7 +95,7 @@ assert(result === 'pong');
 pool.scheduleTask(task).then(result => assert(result === 'pong'));
 ```
 
-Check out the full [API Documentation](https://dekkai-csv.github.io/workers/)
+Check out the full [API Documentation](https://dekkai-data.github.io/workers/)
 
 ## Deno notes
 
