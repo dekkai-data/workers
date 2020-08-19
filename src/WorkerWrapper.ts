@@ -1,17 +1,18 @@
 import {NodeWorker, WebWorker, PlatformWorker} from './types';
-import {isNodeJS, getModule} from './envNodeJS';
+import {loadModule} from '@dekkai/env/build/lib/moduleLoader.js';
+import {isNodeJS} from '@dekkai/env/build/lib/node.js';
 
 /**
  * A promise that returns the Worker class for the platform.
  * @internal
  */
-const kWorkerPromise: Promise<any> = isNodeJS() ? getModule('worker_threads').then(mod => mod.Worker) : Promise.resolve(Worker);
+const kWorkerPromise: Promise<any> = isNodeJS() ? loadModule('worker_threads').then(mod => mod.Worker) : Promise.resolve(Worker);
 
 /**
  * This promise returns the `path` module in NodeJS and `null` otherwise
  * @internal
  */
-const kPathPromise: Promise<any> = isNodeJS() ? getModule('path') : Promise.resolve(null);
+const kPathPromise: Promise<any> = isNodeJS() ? loadModule('path') : Promise.resolve(null);
 
 /**
  * Wraps a worker instance on supported platforms and exposes a shared minimum viable API, while providing access to

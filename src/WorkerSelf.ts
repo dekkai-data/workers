@@ -1,5 +1,6 @@
 import {MessagePort} from 'worker_threads';
-import {getModule, isNodeJS} from './envNodeJS';
+import {loadModule} from '@dekkai/env/build/lib/moduleLoader.js';
+import {isNodeJS} from '@dekkai/env/build/lib/node.js';
 
 /**
  * Declare `self` for browser environments.
@@ -46,7 +47,7 @@ class WorkerSelf {
      */
     private async initialize(): Promise<void> {
         if (isNodeJS()) {
-            const WorkerThreads = await getModule('worker_threads');
+            const WorkerThreads = await loadModule('worker_threads');
             this._self = WorkerThreads.parentPort;
         } else {
             this._self = self;

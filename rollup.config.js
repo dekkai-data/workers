@@ -1,12 +1,19 @@
 'use strict';
 const path = require('path');
 const typescript = require('rollup-plugin-typescript2');
-const sourceMaps = require('rollup-plugin-sourcemaps');
+const resolve = require('@rollup/plugin-node-resolve').default;
 const globby = require('globby');
+
+const extensions = [
+    '.js', '.jsx', '.ts', '.tsx',
+];
 
 function generateConfig(type) {
     const input = {};
+    const plugins = [];
+    const external = [];
     let buildDir;
+
     switch(type) {
         case 'lib':
             buildDir = path.resolve(__dirname, 'build/lib');
@@ -19,12 +26,18 @@ function generateConfig(type) {
                 const parsed = path.parse(file);
                 input[path.join(parsed.dir.substr('src/'.length), parsed.name)] = file;
             });
+
+            external.push(/@dekkai\/env\//);
             break;
 
         case 'dist':
         default:
             buildDir = path.resolve(__dirname, 'build/dist');
             input['mod'] = path.resolve(__dirname, 'src/mod.ts');
+            plugins.push(resolve({
+                extensions,
+                jsnext: true,
+            }));
             break;
     }
 
@@ -38,6 +51,7 @@ function generateConfig(type) {
             chunkFileNames: 'dependencies/[name].js',
         },
         plugins: [
+            ...plugins,
             typescript({
                 typescript: require('typescript'),
                 cacheRoot: path.resolve(__dirname, '.rts2_cache'),
@@ -47,6 +61,7 @@ function generateConfig(type) {
             clearScreen: false
         },
         external: [
+            ...external,
             'worker_threads',
         ],
     };
