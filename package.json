@@ -66,5 +66,8 @@
         "hooks": {
             "pre-push": "yarn pre-push"
         }
+    },
+    "dependencies": {
+        "@dekkai/env": "^1.0.1"
     }
 }
