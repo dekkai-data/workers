@@ -58,7 +58,7 @@ class MyTaskExecutor {
 }
 
 // register the object as a task executor
-WorkerInterface.instance.addTaskExecutor(new MyTaskExecutor());
+WorkerInterface.addTaskExecutor(new MyTaskExecutor());
 ```
 
 **Use a `WorkerPool` in your main thread**
