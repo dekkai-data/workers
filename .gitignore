@@ -1,4 +1,5 @@
 node_modules
+.yarn/
 .rts2_cache/
 .idea/
 build/
