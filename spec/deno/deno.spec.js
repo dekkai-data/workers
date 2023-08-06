@@ -1,10 +1,6 @@
 /* global Deno */
 
-/*
- * deno is not viable for this work until the following task is completed:
- * https://github.com/denoland/deno/issues/3557
- */
-import '../../node_modules/mocha/mocha.js';
+import "https://unpkg.com/mocha@8.1.1/mocha.js";
 
 import {env} from './env.js';
 import specWorkerWrapper from '../base/WorkerWrapper.spec.js';

@@ -1,6 +1,6 @@
 /* global chai */
 
-import '../../node_modules/chai/chai.js';
+import chai from 'npm:chai@4.2.0';
 
 function createWorker(file) {
     // eslint-disable-next-line
